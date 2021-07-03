@@ -1,0 +1,192 @@
+@import 'reset';
+@import 'variables';
+
+.statistics {
+    width: 100%;
+
+    &_title {
+        margin-bottom: 29px;
+    }
+
+    &_list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &-item {
+            //общая обёртка с для графиков
+            width: calc(48.52%);
+
+            &:nth-child(-n+2) {
+                margin-bottom: 20px;
+            }
+
+            &:last-child {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        }
+
+        &-item_title {
+            font-size: rem(24px);
+            margin-bottom: 18px;
+            color: $font-color-black;
+        }
+    }
+
+    &_graph {
+        //это само поле графика
+        height: 301px;
+        max-width: 492px;
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
+        border-radius: 30px;
+
+        &.small {
+            height: 258px;
+        }
+
+        &:nth-child(-n+3) {
+            background-color: #fff5f5;
+        }
+    }
+
+    &_circle-container {
+        padding: 12px;
+        height: 258px;
+    }
+
+    &_sorting-diagramma {
+        width: 117px;
+        height: 117px;
+        margin: 0 auto 13px;
+        border: 2px solid $font-color-black;
+        border-radius: 50%;
+    }
+
+    &_sorting-materials {
+        &-item {
+            margin-bottom: 11px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .material-color {
+                display: inline-block;
+                width: 17px;
+                height: 17px;
+                background-color: #65BDC0;
+                border-radius: 50%;
+                margin-right: 13px;
+            }
+
+            .mateial-name {
+                font-size: rem(17px);
+                color: $font-color-black;
+            }
+        }
+    }
+
+    &_circle-graph {
+        //контейнер с круговой диаграммой
+        width: calc(42.88%);
+        max-width: 211px;
+
+        &-date {
+            color: $font-color-grey;
+            font-size: rem(9px);
+        }
+    }
+
+    &_controls-center {
+        //контейнер с кнопками
+        width: calc(51.01%);
+        max-width: 251px;
+
+    }
+
+    &_controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 34px 10px 28px;
+        height: 258px;
+
+        &-device-wrap {
+            text-align: center;
+            max-height: 91px;
+
+            .device_name {
+                font-size: rem(13px);
+                color: $font-color-grey;
+            }
+        }
+
+        &-btn {
+            width: 71px;
+            height: 71px;
+            border-radius: 18px;
+            border: none;
+            outline: none;
+            margin-bottom: 4px;
+
+            &.tv {
+                background-color: $button-color-blue;
+
+                svg {
+                    width: 31px;
+                    height: 28px;
+                }
+            }
+
+            &.kettle {
+                background-color: $button-color-red;
+
+                svg {
+                    width: 27px;
+                    height: 28px;
+                }
+            }
+
+            &.washer {
+                background-color: $button-color-green;
+
+                svg {
+                    width: 25px;
+                    height: 28px;
+                }
+            }
+
+            &.fridge {
+                background-color: $button-color-red;
+
+                svg {
+                    width: 24px;
+                    height: 29px;
+                }
+            }
+
+            &.stove {
+                background-color: $button-color-green;
+
+                svg {
+                    width: 29px;
+                    height: 30px;
+                }
+            }
+
+            &.pc {
+                background-color: $button-color-blue;
+
+                svg {
+                    width: 29px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}

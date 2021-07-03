@@ -1,0 +1,150 @@
+@import 'reset';
+@import 'variables';
+
+.members {
+    width: 100%;
+    max-width: 1014px;
+
+    &_title {
+        font-size: rem(48px);
+        color: $font-color-black;
+        font-weight: 400;
+        margin-bottom: 26px;
+    }
+
+    &_cards-list_wrap {
+        width: 100%;
+        height: 100%;
+    }
+
+    &_cards-list {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &_card {
+        margin-right: 46px;
+        margin-bottom: 34px;
+        width: 252px;
+        border-radius: 41px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        // text-align: center;
+        &-avatar {
+            margin-bottom: 15px;
+
+            svg {
+                width: 87px;
+                height: 87px;
+            }
+        }
+
+        &-annie {
+            .members_card-inner--upper {
+                background-color: #EE777F;
+
+            }
+        }
+
+        &-john {
+            .members_card-inner--upper {
+                background-color: #65BDC0;
+
+            }
+        }
+
+        &-marie {
+            .members_card-inner--upper {
+                background-color: #1D2343;
+
+            }
+
+        }
+
+        &-inner--upper {
+            border-radius: 41px 41px 0 0;
+            padding-top: 37px;
+            padding-bottom: 12px;
+            color: $font-color-white;
+            text-align: center;
+        }
+
+        &-name {
+            font-size: rem(24px);
+            margin-bottom: 7px;
+        }
+
+        &-owner {
+            font-size: rem(15px);
+        }
+
+        &-inner--lower {
+            background-color: #FFF5F5;
+            border-radius: 0 0 41px 41px;
+            padding: 24px 0 30px 24px;
+            color: rgba($font-color-black, $alpha: .75);
+        }
+
+        &-empty {
+            height: 314px;
+            border: 4px dashed #f4f4f4;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        /* &_add{
+        width: 94px;
+        height: 94px;
+        border-radius: 50%;
+        border: 4px solid #f4f4f4;
+        line-height: 34px;
+
+    } */
+    }
+
+    &_owner-status {
+        margin-bottom: 13px;
+        font-size: rem(16px);
+    }
+
+    &_room {
+        font-size: rem(16px);
+
+    }
+
+}
+
+.members_add {
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    border: 4px solid #f4f4f4;
+    margin: 0 auto;
+    transform: translateY(100%);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 37.6px;
+        height: 4px;
+        background-color: #f4f4f4;
+        left: 28%;
+        top: 50%;
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 37.6px;
+        width: 4px;
+        background-color: #f4f4f4;
+        left: 47%;
+        top: 30%;
+    }
+
+}

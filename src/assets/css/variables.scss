@@ -1,0 +1,13 @@
+$font-color-white:#FFF5F5;
+$font-color-black:#1D2343;
+$font-color-grey:#c2c2c2;
+$font-color-grey2: #565A72;
+$button-color-blue: #1d2343;
+$button-color-red: #EE777F;
+$button-color-green:#65BDC0;
+$root-font-size: 16px;
+
+
+@function rem($size) {
+    @return $size / $root-font-size * 1rem;
+}

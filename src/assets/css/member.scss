@@ -1,0 +1,265 @@
+@import 'reset';
+@import 'variables';
+
+.member {
+    width: 100%;
+
+    &_welcome-title {
+        font-size: rem(48px);
+        color: $font-color-black;
+        margin-bottom: 30px;
+    }
+
+    &_main-parameters {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 849px;
+        margin-bottom: 28px;
+    }
+
+    &_parameter {
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
+        border-radius: 30px;
+        padding-top: 14px;
+
+        &.time {
+            width: calc(31.56%);
+            height: 146px;
+            max-width: 268px;
+            padding-left: 27px;
+
+            .member_parameter-name {
+                margin-bottom: 10px;
+            }
+        }
+
+        &.out-temp {
+            width: calc(37.57%);
+            max-width: 319px;
+            padding-left: 22px;
+            padding-right: 16px;
+        }
+
+        &.memb-home {
+            width: calc(24.97%);
+            max-width: 212px;
+            padding-left: 22px;
+
+            .member_parameter-name {
+                margin-bottom: 12px;
+            }
+
+            .member_parameter-value-2 {
+                display: flex;
+            }
+        }
+
+        &-name {
+            font-size: rem(15px);
+            color: $font-color-grey;
+        }
+
+        &-time {
+            font-size: rem(51px);
+            color: $font-color-grey2;
+        }
+
+        &-inner_wrap {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+        }
+
+        &-value {
+            font-size: rem(40px);
+            color: $font-color-grey2;
+            line-height: 92px;
+        }
+
+    }
+
+    &_icon-wrap {
+        margin-right: 20px;
+
+        svg {
+            margin-bottom: 10px;
+        }
+
+        div {
+            font-size: rem(11px);
+            text-align: center;
+            color: $font-color-grey2;
+        }
+    }
+
+    &_controls-title {
+        font-size: rem(24px);
+        color: $font-color-black;
+        margin-bottom: 31px;
+    }
+
+    &_controls-list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &_controls-item {
+
+        &.light,
+        &.air {
+            //параметры первой и второй карточки
+            width: calc(27.81%);
+            max-width: 282px;
+            box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.18);
+            border-radius: 30px;
+            padding: 15px 0 53px 0;
+        }
+
+        &.temperature {
+            //параметры третьей карточки
+            width: calc(18.14%);
+            max-width: 184px;
+            box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.18);
+            border-radius: 30px;
+            text-align: center;
+            padding-top: 15px;
+
+            .member_controls-name {
+                margin-left: 0;
+            }
+        }
+
+        &.shortcuts {
+            //параметры последней карточки с кнопками
+            width: calc(13.8%);
+            max-width: 140px;
+        }
+
+    }
+
+    &_controls {
+        &-name {
+            font-size: rem(18px);
+            color: $font-color-grey;
+            margin-bottom: 32px;
+            margin-left: 27px;
+        }
+
+        &-controler {
+            width: 187px;
+            height: 187px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.17);
+            margin: 0 auto;
+            position: relative;
+
+            &_scale {
+                position: absolute;
+                width: 143px;
+                height: 143px;
+                border: 16px solid $button-color-green;
+                border-radius: 50%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                line-height: 120px;
+                font-size: rem(40px);
+                color: $font-color-black;
+            }
+        }
+
+        &-from,
+        &-to {
+            font-size: rem(18px);
+            color: $font-color-grey2;
+        }
+
+        &-vertical_controler {
+            width: 85px;
+            height: 239px;
+            box-shadow: 0px -6px 60px rgba(29, 35, 67, 0.14);
+            border-radius: 25px;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        &-fill {
+            width: 100%;
+            height: 60.66%;
+            background-color: $button-color-red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 0 0 25px 25px;
+        }
+
+        &-temperature {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $font-color-white;
+            font-size: rem(20px);
+
+        }
+
+        &-btn_wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-btn {
+            width: 100%;
+            height: 74px;
+            border-radius: 18px;
+            border: none;
+            margin-bottom: 14px;
+            color: $font-color-white;
+            font-size: rem(14px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: 'Lack';
+            cursor: pointer;
+            transition: .3s;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.wifi {
+                background-color: $button-color-red;
+
+                &:hover {
+                    background-color: darken($color: $button-color-red, $amount: 8);
+                }
+            }
+
+            &.music {
+                background-color: $button-color-green;
+
+                &:hover {
+                    background-color: darken($color: $button-color-green, $amount: 8);
+                }
+            }
+
+            &.intercom {
+                background-color: $button-color-blue;
+
+                &:hover {
+                    background-color: darken($color: $button-color-blue, $amount: 8);
+                }
+            }
+        }
+    }
+
+    &_range-wrap {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
