@@ -98,22 +98,22 @@
 
     &_devices {
         &-title {
-            margin-bottom: 27px;
+            margin-bottom: rem(27px);
             font-size: rem(24px);
         }
 
         &-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: rem(36px);
+            row-gap: rem(27px);
 
             &-item {
-                width: calc(21.44%);
-                max-width: 163px;
-                height: 131px;
-                border-radius: 20px;
+                width: 100%;
+                height: rem(131px);
+                border-radius: rem(20px);
                 color: $font-color-white;
-                margin-bottom: 36px;
+                // margin-bottom: 36px;
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
@@ -128,24 +128,21 @@
                 div {
                     font-size: rem(19px);
                 }
-
-                &.red {
+                &:nth-child(3n+1){
                     background-color: $button-color-red;
 
                     &:hover {
                         background-color: darken($color: $button-color-red, $amount: 10);
                     }
                 }
-
-                &.green {
+                &:nth-child(3n+2){
                     background-color: $button-color-green;
 
                     &:hover {
                         background-color: darken($color: $button-color-green, $amount: 10);
                     }
                 }
-
-                &.blue {
+                &:nth-child(3n+3){
                     background-color: $button-color-blue;
 
                     &:hover {
@@ -154,7 +151,6 @@
                 }
             }
         }
-
     }
 
     &_selectors {
@@ -225,6 +221,26 @@
                         color: rgba(238, 119, 127, 0.31);
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .rooms {
+        &_devices {
+            &-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rooms {
+        &_devices {
+            &-list {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     }

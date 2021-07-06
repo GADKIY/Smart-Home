@@ -54,13 +54,13 @@
         <div class="rooms_devices">
             <div class="rooms_devices-title">Devices</div>
             <ul class="rooms_devices-list">
-                <li class="rooms_devices-list-item red">
-                    <svg width="24" height="29">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonFridge"></use>
+                <li class="rooms_devices-list-item" v-for="rd in rooms[0].devices" :key="rd">
+                    <svg :width="rd.icon.width" :height="rd.icon.height">
+                        <use :xlink:href="'/img/sprite.0dc010ad.svg#'+rd.icon.name"></use>
                     </svg>
-                    <div>Fridge</div>
+                    <div>{{rd.name}}</div>
                 </li>
-                <li class="rooms_devices-list-item green">
+                <!-- <li class="rooms_devices-list-item green">
                     <svg width="27" height="28">
                         <use xlink:href="../assets/svg/sprite.svg#buttonKettle"></use>
                     </svg>
@@ -71,8 +71,8 @@
                         <use xlink:href="../assets/svg/sprite.svg#buttonStove"></use>
                     </svg>
                     <div>Stove</div>
-                </li>
-                <li class="rooms_devices-list-item red">
+                </li> -->
+                <!-- <li class="rooms_devices-list-item red">
                     <svg width="32" height="40">
                         <use xlink:href="../assets/svg/sprite.svg#buttonDishwasher"></use>
                     </svg>
@@ -101,7 +101,7 @@
                         <use xlink:href="../assets/svg/sprite.svg#buttonGrill"></use>
                     </svg>
                     <div>Indoor Grill</div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -162,7 +162,6 @@ export default {
         .get('data/rooms.json')
         .then((resp)=>{
             this.rooms = resp.data;
-            
         })
   }
 }
