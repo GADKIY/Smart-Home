@@ -149,7 +149,21 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default {
-  name: 'rooms'
+  name: 'rooms',
+  data(){
+      return{
+        rooms:[]
+      }
+  },
+  created(){
+      axios
+        .get('data/rooms.json')
+        .then((resp)=>{
+            this.rooms = resp.data;
+            
+        })
+  }
 }
 </script>

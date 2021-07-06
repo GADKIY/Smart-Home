@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Kitchen",
+        "icon":"kitchen",
+        "temperature": {
+           "c": 23.5,
+           "f": 74.3
+        },
+        "humidity": 40,
+        "lightning": 86,
+        "devices":[
+            {
+                "name": "Fridge",
+                "icon": {
+                    "name":"buttonFridge",
+                    "width": "24",
+                    "height": "29"
+                }
+            }
+        ]
+    }
+]
