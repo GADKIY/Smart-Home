@@ -91,6 +91,6 @@ export default {
             }
         }
     },
-    name: "security"
+    name: "login"
 }
 </script>

@@ -46,9 +46,9 @@ const routes = [
     }
   },
   {
-    path: "/security",
-    name: 'Security',
-    component: () => import('../views/security.vue'),
+    path: "/login",
+    name: 'Login',
+    component: () => import('../views/login.vue'),
     meta:{
       layout: 'auth'
     }
@@ -61,11 +61,11 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, form, next)=>{
-  if(to.path !== "/security"){
+  if(to.path !== "/login"){
     if(localStorage.getItem("user")!==null){
       next();
     }else{
-      next("/security");
+      next("/login");
     }
   }else{
     next();
