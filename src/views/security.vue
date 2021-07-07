@@ -1,9 +1,9 @@
 <template>
     <div class="security">
         <div class="security_form-wrap">
-            <form class="security_form">
-                <input class="security_input" id="name" type="text" placeholder="Name">
-                <input class="security_input" id="pass" type="text" placeholder="Password">
+            <form class="security_form" @submit="login">
+                <input class="security_input" id="name" type="text" placeholder="Name" v-model="name">
+                <input class="security_input" id="pass" type="text" placeholder="Password" v-model="pass">
                 <button class="btn security_btn" type="submit">Enter</button>            
             </form>
         </div>
@@ -70,6 +70,27 @@
 
 <script>
 export default {
+    data(){
+        return{
+            name: '',
+            pass: ''
+        }
+    },
+    methods:{
+        login(e){
+            e.preventDefault();
+            if(this.name!='' && this.pass!=''){
+                if(this.name === 'admin' && this.pass === "admin"){
+                    localStorage.setItem('user', JSON.stringify({"name":this.name, "pass": this.pass}));
+                    this.$router.push('/');
+                }else{
+                    alert("NO NO NO");
+                }
+            }else{
+                alert("NO ON");
+            }
+        }
+    },
     name: "security"
 }
 </script>

@@ -58,6 +58,19 @@ const routes = [
 
 const router = new VueRouter({
   routes
+});
+
+router.beforeEach((to, form, next)=>{
+  if(to.path !== "/security"){
+    if(localStorage.getItem("user")!==null){
+      next();
+    }else{
+      next("/security");
+    }
+  }else{
+    next();
+  }
+  
 })
 
 export default router

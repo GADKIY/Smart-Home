@@ -16,15 +16,7 @@
                                     </svg>
                                     <div>Rooms</div>
                                 </router-link>
-                            </li>
-                            <li class="main_screen-control-item">
-                                <router-link to="/security">
-                                    <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#security"></use>
-                                    </svg>
-                                    <div>Security</div>
-                                </router-link>
-                            </li>
+                            </li>                            
                             <li class="main_screen-control-item">
                                 <router-link to="/statistics">
                                    <svg>
@@ -64,11 +56,13 @@
                                 </svg>
                             </span>
                             <span>
-                              <router-link to="/">
-                                <svg width="46" height="46" class="main_screen-control_panel-icon-bigger">
-                                    <use xlink:href="@/assets/svg/sprite.svg#profile"></use>
-                                </svg>
-                              </router-link> 
+                                <button class="logout" @click="logout">
+                                    <router-link to="/">
+                                        <svg width="46" height="46" class="main_screen-control_panel-icon-bigger">
+                                            <use xlink:href="@/assets/svg/sprite.svg#profile"></use>
+                                        </svg>
+                                    </router-link> 
+                                </button>
                             </span>
                         </div>
                         <div class="main_screen-info_inner">
@@ -79,10 +73,6 @@
             </div>
         </section>
     </main>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
   </div>
 </template>
 
@@ -90,11 +80,24 @@
 @import "../assets/fonts/lack.css";
 @import "../assets/css/mainScreen";
 
+.logout{
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 </style>
 
 <script>
 export default {
-    name: "default"
+    name: "default",
+    methods:{
+        logout(){
+            localStorage.removeItem("user");
+            this.$router.push('/security');
+        }
+    }
 }
 </script>
 
