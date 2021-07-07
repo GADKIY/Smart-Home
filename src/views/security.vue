@@ -23,7 +23,7 @@
     &_form-wrap{
         display: flex;
         align-items: center;
-        height: 400px;
+        height: 600px;
         max-width: 400px;
         width: 90%;
     }
