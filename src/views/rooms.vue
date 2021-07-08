@@ -56,7 +56,7 @@
             <ul class="rooms_devices-list">
                 <li class="rooms_devices-list-item" v-for="rd in rooms[0].devices" :key="rd">
                     <svg :width="rd.icon.width" :height="rd.icon.height">
-                        <use :xlink:href="'/img/sprite.0dc010ad.svg#'+rd.icon.name"></use>
+                        <use :xlink:href="'/img/sprite.svg#' + rd.icon.name"></use>
                     </svg>
                     <div>{{rd.name}}</div>
                 </li>
