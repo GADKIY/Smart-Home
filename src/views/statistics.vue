@@ -5,7 +5,6 @@
         <li class="statistics_list-item">
             <h6 class="statistics_list-item_title">Electricity</h6>
             <div class="statistics_graph">
-                <!-- TODO: тут будет красивый график -->
             </div>
         </li>
         <li class="statistics_list-item">
