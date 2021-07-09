@@ -26,7 +26,7 @@
                 <div class="statistics_circle-container statistics_graph">
                     <div class="statistics_circle-graph-date">Apr, 2020</div>
                     <div class="statistics_sorting-diagramma">
-                        <!-- TODO: тут должна быть круговая диаграмма -->
+                        <div ref="chartdiv4" class="graphCircle"></div>
                     </div>
                     <ul class="statistics_sorting-materials">
                         <li class="statistics_sorting-materials-item">
@@ -135,6 +135,11 @@
     color: $font-color-grey;
     
 }
+
+.graphCircle{
+    width: 117px;
+    height: 117px;
+}
 </style>
 
 <script>
@@ -151,6 +156,7 @@ export default{
         this.graph1();
         this.graph2();
         this.graph3();
+        this.graph4();
 
         
 
@@ -330,6 +336,29 @@ export default{
         series2.sequencedInterpolation = true;
         series2.sequencedInterpolationDelay = 90;
         
+    },
+    graph4(){
+        let chart = am4core.create(this.$refs.chartdiv4, am4charts.PieChart);
+
+        chart.data = [{
+            "category": "Glass",
+            "value": 25
+        }, {
+            "category": "Plastic",
+            "value": 15
+        }, {
+            "category": "Paper",
+            "value": 60
+        }];
+
+        let series1 = chart.series.push(new am4charts.PieSeries());
+        series1.dataFields.value = "value";
+        series1.dataFields.category = "category";
+        series1.labels.template.disabled = true;
+        series1.ticks.template.disabled = true;
+
+        chart.radius = "60%";
+        chart.innerRadius = "40%";
     }
     }
     
