@@ -52,9 +52,17 @@
             </div>
             <div class="statistics_controls-center">
                 <h6 class="statistics_list-item_title">Devices</h6>
-                <div class="statistics_controls statistics_graph">
+                <ul class="statistics_controls statistics_graph">
                     <!-- TODO: Сверстать контейнеры для графиков и кнопок девайсов -->
-                    <div class="statistics_controls-device-wrap">
+                    <li class="statistics_controls-device-wrap" v-for="d in devices" :key="d">
+                        <button type="button" class="statistics_controls-btn">
+                            <svg :width="d.icon.width" :height="d.icon.height">
+                                <use :xlink:href="'/img/sprite.svg#' + d.icon.name"></use>
+                            </svg>
+                        </button>
+                        <div>{{d.name}}</div>
+                    </li>
+                    <!-- <div class="statistics_controls-device-wrap">
                         <button type="button" class="statistics_controls-btn tv">
                             <svg>
                                 <use xlink:href="../assets/svg/sprite.svg#buttonTV"></use>
@@ -63,8 +71,8 @@
                         <div class="device_name">
                             TV
                         </div>
-                    </div>
-                    <div class="statistics_controls-device-wrap">
+                    </div> -->
+                    <!-- <div class="statistics_controls-device-wrap">
                         <button type="button" class="statistics_controls-btn kettle">
                             <svg>
                                 <use xlink:href="../assets/svg/sprite.svg#buttonKettle">
@@ -117,8 +125,8 @@
                         <div class="device_name">
                             PC
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                </ul>
             </div>
         </li>
     </ul>
@@ -133,12 +141,30 @@
     height: 100%;
     font-size: rem(11px);
     color: $font-color-grey;
-    
 }
 
 .graphCircle{
     width: 117px;
     height: 117px;
+}
+
+.graph,
+.graphCircle {
+    svg {
+        g {
+            g:nth-child(2) {
+                g:nth-child(2){
+                    g {
+                        g:nth-child(3){
+                            g:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 </style>
 
@@ -146,21 +172,27 @@
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import axios from 'axios';
 am4core.useTheme(am4themes_animated);
 
 export default{
-    
-
+    data(){
+        return{
+            devices:[]
+        }
+    },
+    created(){
+      axios
+        .get('data/devices.json')
+        .then((resp)=>{
+            this.devices = resp.data;
+        })
+    },
     mounted(){
-
         this.graph1();
         this.graph2();
         this.graph3();
         this.graph4();
-
-        
-
-
     },
     methods:{
         graph1(){
@@ -251,37 +283,37 @@ export default{
                 },                
             ];
             
-        let xAxes2 = chart2.xAxes.push(new am4charts.CategoryAxis());
-        xAxes2.dataFields.category = "category";
+            let xAxes2 = chart2.xAxes.push(new am4charts.CategoryAxis());
+            xAxes2.dataFields.category = "category";
 
-        
-        xAxes2.renderer.grid.template.location = 0;
-        
-        xAxes2.renderer.minGridDistance = 20;
-        
-        let yAxes2 = chart2.yAxes.push(new am4charts.ValueAxis());
-        yAxes2.renderer.maxLabelPosition = 1;
-        
-        let series2 = chart2.series.push(new am4charts.LineSeries());
-        
-        let series2Bullets2 = series2.bullets.push(new am4charts.CircleBullet());
-        series2Bullets2.tooltipText = "{categoryX} {valueY}";
-        
-        series2.dataFields.valueY = "value";
-        series2.dataFields.categoryX = "category";
-        series2.strokeWidth = 2;
-        series2.tensionX = 0.7;
-        series2.tensionY = 0.8;
-        
-        series2.stroke = am4core.color("#65BDC0");
-        series2.fill = am4core.color("#65BDC0");
-        series2.sequencedInterpolation = true;
-        series2.sequencedInterpolationDelay = 90;
+            
+            xAxes2.renderer.grid.template.location = 0;
+            
+            xAxes2.renderer.minGridDistance = 20;
+            
+            let yAxes2 = chart2.yAxes.push(new am4charts.ValueAxis());
+            yAxes2.renderer.maxLabelPosition = 1;
+            
+            let series2 = chart2.series.push(new am4charts.LineSeries());
+            
+            let series2Bullets2 = series2.bullets.push(new am4charts.CircleBullet());
+            series2Bullets2.tooltipText = "{categoryX} {valueY}";
+            
+            series2.dataFields.valueY = "value";
+            series2.dataFields.categoryX = "category";
+            series2.strokeWidth = 2;
+            series2.tensionX = 0.7;
+            series2.tensionY = 0.8;
+            
+            series2.stroke = am4core.color("#65BDC0");
+            series2.fill = am4core.color("#65BDC0");
+            series2.sequencedInterpolation = true;
+            series2.sequencedInterpolationDelay = 90;
         },
         graph3(){
-        let chart2 = am4core.create(this.$refs.chartdiv3, am4charts.XYChart);
-            
-        chart2.data = [
+            let chart2 = am4core.create(this.$refs.chartdiv3, am4charts.XYChart);
+                
+            chart2.data = [
                 {
                     "category": "Dec",
                     "value": 72
@@ -306,64 +338,66 @@ export default{
                     "category": "Nov",
                     "value": 51
                 },
+                    
+            ];
                 
-        ];
+            let xAxes2 = chart2.xAxes.push(new am4charts.CategoryAxis());
+            xAxes2.dataFields.category = "category";
+
             
-        let xAxes2 = chart2.xAxes.push(new am4charts.CategoryAxis());
-        xAxes2.dataFields.category = "category";
+            xAxes2.renderer.grid.template.location = 0;
+            
+            xAxes2.renderer.minGridDistance = 20;
+            
+            let yAxes2 = chart2.yAxes.push(new am4charts.ValueAxis());
+            yAxes2.renderer.maxLabelPosition = 1;
+            
+            let series2 = chart2.series.push(new am4charts.LineSeries());
+            
+            let series2Bullets2 = series2.bullets.push(new am4charts.CircleBullet());
+            series2Bullets2.tooltipText = "{categoryX} {valueY}";
+            
+            series2.dataFields.valueY = "value";
+            series2.dataFields.categoryX = "category";
+            series2.strokeWidth = 2;
+            series2.tensionX = 0.7;
+            series2.tensionY = 0.8;
+            
+            series2.stroke = am4core.color("#1D2343");
+            series2.fill = am4core.color("#1D2343");
+            series2.sequencedInterpolation = true;
+            series2.sequencedInterpolationDelay = 90;
+        },
+        graph4(){
+            let chart = am4core.create(this.$refs.chartdiv4, am4charts.PieChart);
 
-        
-        xAxes2.renderer.grid.template.location = 0;
-        
-        xAxes2.renderer.minGridDistance = 20;
-        
-        let yAxes2 = chart2.yAxes.push(new am4charts.ValueAxis());
-        yAxes2.renderer.maxLabelPosition = 1;
-        
-        let series2 = chart2.series.push(new am4charts.LineSeries());
-        
-        let series2Bullets2 = series2.bullets.push(new am4charts.CircleBullet());
-        series2Bullets2.tooltipText = "{categoryX} {valueY}";
-        
-        series2.dataFields.valueY = "value";
-        series2.dataFields.categoryX = "category";
-        series2.strokeWidth = 2;
-        series2.tensionX = 0.7;
-        series2.tensionY = 0.8;
-        
-        series2.stroke = am4core.color("#1D2343");
-        series2.fill = am4core.color("#1D2343");
-        series2.sequencedInterpolation = true;
-        series2.sequencedInterpolationDelay = 90;
-        
-    },
-    graph4(){
-        let chart = am4core.create(this.$refs.chartdiv4, am4charts.PieChart);
+            chart.data = [{
+                "category": "Glass",
+                "value": 25
+            }, {
+                "category": "Plastic",
+                "value": 15
+            }, {
+                "category": "Paper",
+                "value": 60
+            }];
 
-        chart.data = [{
-            "category": "Glass",
-            "value": 25
-        }, {
-            "category": "Plastic",
-            "value": 15
-        }, {
-            "category": "Paper",
-            "value": 60
-        }];
+            let series1 = chart.series.push(new am4charts.PieSeries());
+            series1.dataFields.value = "value";
+            series1.dataFields.category = "category";
+            series1.labels.template.disabled = true;
+            series1.ticks.template.disabled = true;
 
-        let series1 = chart.series.push(new am4charts.PieSeries());
-        series1.dataFields.value = "value";
-        series1.dataFields.category = "category";
-        series1.labels.template.disabled = true;
-        series1.ticks.template.disabled = true;
+            chart.radius = "60%";
+            chart.innerRadius = "40%";
 
-        chart.radius = "60%";
-        chart.innerRadius = "40%";
+            series1.colors.list = [
+                am4core.color("#EE777F"),
+                am4core.color("#65BDC0"),
+                am4core.color("#1D2343")
+            ];
+        }
     }
-    }
-    
-    
-
 }
 
 

@@ -8,18 +8,18 @@
                         <div class="main_screen-logo">
                             <img src="@/assets/svg/Group 1.png" alt="logo">
                         </div>
-                        <ul class="main_screen-control-list">                            
+                        <ul class="main_screen-control-list">
                             <li class="main_screen-control-item">
-                                <router-link to="/security">
+                                <router-link to="/login">
                                     <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#security"></use>
+                                        <use xlink:href="@/assets/svg/sprite.svg#login"></use>
                                     </svg>
                                     <div>Login</div>
                                 </router-link>
-                            </li>                                                     
+                            </li>
                         </ul>
                     </div>
-                    <div class="main_screen-info_wrap">                        
+                    <div class="main_screen-info_wrap">
                         <div class="main_screen-info_inner">
                           <router-view/>
                         </div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </section>
-    </main>    
+    </main>
   </div>
 </template>
 

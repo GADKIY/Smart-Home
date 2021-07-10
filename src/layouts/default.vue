@@ -6,7 +6,9 @@
                 <div class="main_screen">
                     <div class="main_screen-control_bar">
                         <div class="main_screen-logo">
-                            <img src="@/assets/svg/Group 1.png" alt="logo">
+                            <router-link to="/">
+                                <img src="@/assets/svg/Group 1.png" alt="logo">
+                            </router-link>
                         </div>
                         <ul class="main_screen-control-list">
                             <li class="main_screen-control-item">
@@ -16,7 +18,7 @@
                                     </svg>
                                     <div>Rooms</div>
                                 </router-link>
-                            </li>                            
+                            </li>
                             <li class="main_screen-control-item">
                                 <router-link to="/statistics">
                                    <svg>
@@ -61,7 +63,7 @@
                                         <svg width="46" height="46" class="main_screen-control_panel-icon-bigger">
                                             <use xlink:href="@/assets/svg/sprite.svg#profile"></use>
                                         </svg>
-                                    </router-link> 
+                                    </router-link>
                                 </button>
                             </span>
                         </div>

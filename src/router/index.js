@@ -14,9 +14,14 @@ const routes = [
   },
   {
     path: '/rooms',
-    name: 'Rooms',    
-    component: () => import('../views/rooms.vue')
-    ,
+    name: 'Rooms',
+    component: () => import('../views/rooms.vue'),
+    children: [
+      {
+        path: 'kitchen',
+        component: () => import('../components/kitchen')
+      }
+    ],
     meta: {
       layout: "default"
     }
@@ -53,7 +58,6 @@ const routes = [
       layout: 'auth'
     }
   }
-  
 ]
 
 const router = new VueRouter({
@@ -70,7 +74,6 @@ router.beforeEach((to, form, next)=>{
   }else{
     next();
   }
-  
 })
 
 export default router
