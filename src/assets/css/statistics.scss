@@ -217,11 +217,13 @@
 @media screen and (max-width: 1240px) {
     .statistics {
         &_list {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(7, 1fr);
             &-item {
-                grid-column: span 3;
-    
+                grid-column: span 7;
                 &:nth-last-child(1) {
+                    grid-column: span 5;
+                }
+                &:nth-last-child(2) {
                     grid-column: span 2;
                 }
             }
@@ -234,6 +236,15 @@
 
 @media screen and (max-width: 1050px) {
     .statistics {
+        &_list {
+            grid-template-columns: repeat(5, 1fr);
+            &-item {
+                grid-column: span 5;
+                &:nth-last-child(1) {
+                    grid-column: span 3;
+                }
+            }
+        }
         &_devices {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -242,38 +253,40 @@
 
 @media screen and (max-width: 900px) {
     .statistics {
-        &_list {
-            grid-template-columns: repeat(2, 1fr);
-            &-item {
-                grid-column: span 2;
-    
-                &:nth-last-child(1) {
-                    grid-column: span 1;
-                }
-            }
-        }
         &_devices {
             grid-template-columns: repeat(3, 1fr);
         }
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 550px) {
     .statistics {
         &_list {
-            grid-template-columns: repeat(1, 1fr);
-            // grid-auto-rows: inherit;
+            grid-template-columns: repeat(2, 1fr);
             &-item {
-                grid-column: span 1;
+                grid-column: span 2;
+
+                &:nth-last-child(1) {
+                    grid-column: span 1;
+                }
+                &:nth-last-child(2) {
+                    grid-column: span 1;
+                }
             }
+        }
+        &_devices {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 425px) {
     .statistics {
-        &_devices {
-            grid-template-columns: repeat(2, 1fr);
+        &_list {
+            grid-template-columns: repeat(1, 1fr);
+            &-item {
+                grid-column: span 1;
+            }
         }
     }
 }

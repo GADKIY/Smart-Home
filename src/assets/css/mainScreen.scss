@@ -17,10 +17,8 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
-    background: rgb(229, 229, 229);
-    background: -moz-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
-    background: -webkit-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
-    background: linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
+    background-color: #65BDC0;
+    border-radius: rem(60px);
     &-control_bar{
         position: relative;
         background-color: #65BDC0;
@@ -109,8 +107,73 @@
                 margin-bottom: rem(5px);
             }
         }
-        &-info_wrap {
-            padding: rem(36px) rem(40px) rem(31px) rem(36px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0;
+    }
+    .main_screen {
+        flex-direction: column-reverse;
+        border-radius: 0;
+        &-logo {
+            width: rem(56px);
+            height: rem(56px);
+        }
+        &-control_bar {
+            position: fixed;
+            width: 100%;
+            max-width: inherit;
+            border-radius: 0;
+            padding: rem(10px) rem(20px);
+            bottom: 0;
+            z-index: 100;
+            box-shadow: 0 -10px 20px 1px #fff;
+        }
+        &-control-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            top: 50%;
+            z-index: -1;
+        }
+        &-control-item{
+            margin: 0 rem(5px);
+            &:nth-child(2) {
+                margin-right: 35px;
+            }
+            &:nth-child(3) {
+                margin-left: 35px;
+            }
+            svg {
+                width: rem(50px);
+                height: rem(50px);
+                margin-bottom: 0;
+            }
+            div {
+                display: none;
+            }
+        }
+        &-info_wrap{
+            border-radius: 0;
+            padding: rem(36px) rem(20px) rem(121px) rem(20px);
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main_screen {
+        &-logo {
+            width: rem(50px);
+            height: rem(50px);
+        }
+        &-control-item{
+            svg {
+                width: rem(40px);
+                height: rem(40px);
+            }
         }
     }
 }

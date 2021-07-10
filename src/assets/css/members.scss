@@ -57,11 +57,12 @@
         grid-auto-rows: 1fr;
         column-gap: rem(46px);
         row-gap: rem(34px);
-        padding: rem(28px) rem(5px) rem(28px);
+        padding: rem(28px) rem(5px);
     }
 
     &_card {
         height: 100%;
+        width: 100%;
         max-width: rem(252px);
         border-radius: rem(41px);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -160,10 +161,29 @@
         &_cards-list {
             grid-template-columns: repeat(2, 1fr);
         }
+        &_card {
+            margin: 0 auto;
+        }
     }
 }
 
 @media screen and (max-width: 767px) {
+    .members {
+        &::before,
+        &::after {
+            display: none;
+        }
+        &_cards-list_wrap {
+            overflow: inherit;
+            max-height: inherit;
+        }
+        &_cards-list {
+            padding: rem(28px) rem(5px) 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
     .members {
         &_cards-list {
             grid-template-columns: repeat(1, 1fr);
