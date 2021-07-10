@@ -21,25 +21,11 @@
                     </div>
                     <div class="main_screen-info_wrap">
                         <div class="main_screen-control_panel">
-                            <span>
-                                <svg class="main_screen-control_panel-icon">
-                                    <use xlink:href="@/assets/svg/sprite.svg#settings"></use>
-                                </svg>
-                            </span>
-                            <span>
-                                <svg class="main_screen-control_panel-icon">
-                                    <use xlink:href="@/assets/svg/sprite.svg#notification"></use>
-                                </svg>
-                            </span>
-                            <span>
-                                <button class="logout" @click="logout">
-                                    <router-link to="/">
-                                        <svg width="46" height="46" class="main_screen-control_panel-icon-bigger">
-                                            <use xlink:href="@/assets/svg/sprite.svg#profile"></use>
-                                        </svg>
-                                    </router-link>
-                                </button>
-                            </span>
+                            <button class="logout" @click="logout">
+                                <router-link to="/">
+                                    <v-svg width="46" height="46" class="main_screen-control_panel-icon-bigger" sprite="logout"></v-svg>
+                                </router-link>
+                            </button>
                         </div>
                         <div class="main_screen-info_inner">
                             <router-view/>
