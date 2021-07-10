@@ -324,9 +324,9 @@ export default{
             chart.innerRadius = "40%";
 
             series1.colors.list = [
+                am4core.color("#65BDC0"),
                 am4core.color("#1D2343"),
                 am4core.color("#EE777F"),
-                am4core.color("#65BDC0"),
             ];
             chart.legend = new am4charts.Legend();
             // chart.legend.maxHeight = 150;
