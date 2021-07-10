@@ -117,8 +117,10 @@
         }
 
     }
-
     &_controls {
+        padding: 34px 10px 28px;
+    }
+    &_devices {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         max-height: 258px;
@@ -126,7 +128,7 @@
         column-gap: 9px;
         justify-content: center;
         align-items: center;
-        padding: 34px 10px 28px;
+
         overflow-y: scroll;
         &::-webkit-scrollbar {
             display: none;

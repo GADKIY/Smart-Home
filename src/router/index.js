@@ -16,12 +16,6 @@ const routes = [
     path: '/rooms',
     name: 'Rooms',
     component: () => import('../views/rooms.vue'),
-    children: [
-      {
-        path: 'kitchen',
-        component: () => import('../components/kitchen')
-      }
-    ],
     meta: {
       layout: "default"
     }

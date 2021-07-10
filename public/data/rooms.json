@@ -74,5 +74,57 @@
                 }
             }
         ]
+    },
+    {
+        "name": "Bedroom",
+        "icon":"bedroom",
+        "temperature": {
+           "c": 23.5,
+           "f": 74.3
+        },
+        "humidity": 40,
+        "lightning": 86,
+        "devices":[
+            {
+                "name": "Kettle",
+                "icon": {
+                    "name":"buttonKettle",
+                    "width": "27",
+                    "height": "28"
+                }
+            },
+            {
+                "name": "Stove",
+                "icon": {
+                    "name":"buttonStove",
+                    "width": "29",
+                    "height": "30"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "31",
+                    "height": "28"
+                }
+            },
+            {
+                "name": "Microwave",
+                "icon": {
+                    "name":"buttonMicrowave",
+                    "width": "43",
+                    "height": "30"
+                }
+            },
+            {
+                "name": "Grill",
+                "icon": {
+                    "name":"buttonGrill",
+                    "width": "36",
+                    "height": "48"
+                }
+            }
+        ]
     }
 ]

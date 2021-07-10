@@ -52,16 +52,19 @@
             </div>
             <div class="statistics_controls-center">
                 <h6 class="statistics_list-item_title">Devices</h6>
-                <ul class="statistics_controls statistics_graph">
+                <div class="statistics_graph statistics_controls">
+                    <ul class="statistics_devices">
                     <!-- TODO: Сверстать контейнеры для графиков и кнопок девайсов -->
-                    <li class="statistics_controls-device-wrap" v-for="d in devices" :key="d">
-                        <button type="button" class="statistics_controls-btn">
-                            <svg :width="d.icon.width" :height="d.icon.height">
-                                <use :xlink:href="'/img/sprite.svg#' + d.icon.name"></use>
-                            </svg>
-                        </button>
-                        <div>{{d.name}}</div>
-                    </li>
+                        <li class="statistics_devices-device-wrap" v-for="d in devices" :key="d">
+                            <button type="button" class="statistics_devices-btn">
+                                <svg :width="d.icon.width" :height="d.icon.height">
+                                    <use :xlink:href="'/img/sprite.svg#' + d.icon.name"></use>
+                                </svg>
+                            </button>
+                            <div>{{d.name}}</div>
+                        </li>
+                    </ul>
+                </div>
                     <!-- <div class="statistics_controls-device-wrap">
                         <button type="button" class="statistics_controls-btn tv">
                             <svg>
@@ -126,7 +129,6 @@
                             PC
                         </div>
                     </div> -->
-                </ul>
             </div>
         </li>
     </ul>

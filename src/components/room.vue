@@ -1,6 +1,6 @@
 <template>
     <div class="room">
-        <h2 class="rooms_title title">Kitchen</h2>
+        <h2 class="rooms_title title">{{info.name}}</h2>
         <ul class="rooms_status-list">
             <li class="rooms_status-list-item biger">
                 <div class="rooms_status-value">
@@ -53,7 +53,7 @@
         <div class="rooms_devices">
             <div class="rooms_devices-title">Devices</div>
             <ul class="rooms_devices-list">
-                <li class="rooms_devices-list-item" v-for="rd in rooms[0].devices" :key="rd">
+                <li class="rooms_devices-list-item" v-for="rd in info.devices" :key="rd">
                     <svg :width="rd.icon.width" :height="rd.icon.height">
                         <use :xlink:href="'/img/sprite.svg#' + rd.icon.name"></use>
                     </svg>
@@ -108,6 +108,7 @@
 
 <script>
 export default {
-   name: 'kitchen',
+   name: 'room',
+   props: ['info']
 }
 </script>
