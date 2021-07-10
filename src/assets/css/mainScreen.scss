@@ -37,7 +37,7 @@
     &-control-list{
         position: absolute;
         text-align: center;
-        top: 50%;
+        top: 51%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -100,4 +100,13 @@
     }
 }
 
-
+@media screen and (max-height: 680px) {
+    .main_screen{
+        &-control-item {
+            margin-bottom: 20px;
+            svg {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

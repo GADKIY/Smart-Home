@@ -127,13 +127,12 @@
                 height: rem(131px);
                 border-radius: rem(20px);
                 color: $font-color-white;
-                // margin-bottom: 36px;
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                // transition: all .2s;
+                transition: all .2s;
 
                 svg {
                     margin-bottom: 13px;
@@ -191,6 +190,7 @@
                     transition: all .2s;
                     color: #c1c1c1;
                     border: none;
+                    cursor: pointer;
                     svg {
                         margin-bottom: 18px;
                     }

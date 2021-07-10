@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Annie Gulberg",
+        "position":"Owner",
+        "status":"At home",
+        "location":"Bedroom",
+        "avatar":"avatar"
+    },
+    {
+        "name":"John Gulberg",
+        "position":"Owner 2",
+        "status":"At home",
+        "location":"Bedroom",
+        "avatar":"avatar"
+    },
+    {
+        "name":"Marie Gulberg",
+        "position":"Owner3",
+        "status":"Out",
+        "location":"",
+        "avatar":"avatar"
+    }
+]
