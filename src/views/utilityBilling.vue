@@ -153,6 +153,24 @@
     width: 100%;
     height: 100%;
 }
+
+.graph {
+    svg {
+        g {
+            g:nth-child(2) {
+                g:nth-child(2){
+                    g {
+                        g:nth-child(3){
+                            g:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 </style>
 
 <script>
@@ -207,39 +225,39 @@ export default {
         }, 
         {
             "category": "Jun",
-            "value1": 2934,
-            "value2": 4903,
-            "value3": 5000
+            "value1": 73,
+            "value2": 64,
+            "value3": 58
         }, 
         {
             "category": "Jul",
-            "value1": 2934,
-            "value2": 4903,
-            "value3": 2000
+            "value1": 72,
+            "value2": 48,
+            "value3": 35
         }, 
         {
             "category": "Aug",
-            "value1": 2934,
-            "value2": 4903,
-            "value3": 2000
+            "value1": 60,
+            "value2": 48,
+            "value3": 18
         }, 
         {
             "category": "Sep",
-            "value1": 2934,
-            "value2": 4903,
-            "value3": 2000
+            "value1": 50,
+            "value2": 80,
+            "value3": 32
         }, 
         {
             "category": "Oct",
-            "value1": 2934,
-            "value2": 4903,
-            "value3": 2000
+            "value1": 72,
+            "value2": 45,
+            "value3": 35
         }, 
         {
             "category": "Nov",
-            "value1": 3806,
-            "value2": 1920,
-            "value3": 2000
+            "value1": 72,
+            "value2": 80,
+            "value3": 42
         }];
 
         let xAxes1 = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -268,7 +286,6 @@ export default {
 
         series1.sequencedInterpolation = true;
         series1.sequencedInterpolationDelay = 100;
-        series1.tooltipText = "{name} {categoryX}: {valueY}";
         series1.stroke = am4core.color("#EE777F");
         series1.fill = am4core.color("#EE777F");
 
@@ -287,7 +304,6 @@ export default {
         series2.tensionX = 0.7;
         series2.tensionY = 0.8;
 
-        series2.tooltipText = "{name} {categoryX}: {valueY}";
         chart.cursor = new am4charts.XYCursor();
         series2.stroke = am4core.color("#1D2343");
         series2.fill = am4core.color("#1D2343");
@@ -307,7 +323,6 @@ export default {
         series3.sequencedInterpolation = true;
         series3.sequencedInterpolationDelay = 100;
 
-        series3.tooltipText = "{name} {categoryX}: {valueY}";
         series3.stroke = am4core.color("#65BDC0");
         series3.fill = am4core.color("#65BDC0");
         }
