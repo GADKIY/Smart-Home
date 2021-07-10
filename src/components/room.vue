@@ -5,20 +5,18 @@
             <li class="rooms_status-list-item biger">
                 <div class="rooms_status-value">
                     <div class="rooms_status-parameter">
-                        Room's<br> Temperature
+                        {{info.temperature.name}}
                     </div>
                     <span id="celsius" class="celsius">
-                        +23.5<span>&deg;C</span>
+                        {{info.temperature.c}}<span>&deg;C</span>
                     </span><br>
                     <span id="fahrenheit" class="fahrenheit">
-                        74.3<span>&deg;F</span>
+                        {{info.temperature.f}}<span>&deg;F</span>
                     </span>
                 </div>
                 <div class="rooms_parameter-scale temperature">
                     <div class="rooms_parameter-scale_inner temperature"></div>
-                    <svg width="22" height="40">
-                        <use xlink:href="../assets/svg/sprite.svg#temperature"></use>
-                    </svg>
+                    <v-svg :width="info.temperature.width" :height="info.temperature.height" :viewBox="'0 0' + info.temperature.width + info.temperature.height" :sprite="info.temperature.icon"></v-svg>
                 </div>
             </li>
             <li class="rooms_status-list-item">
@@ -57,48 +55,6 @@
                     <v-svg :width="rd.icon.width" :height="rd.icon.height" :viewBox="'0 0' + rd.icon.width + rd.icon.height" :sprite="rd.icon.name"></v-svg>
                     <div>{{rd.name}}</div>
                 </li>
-                <!-- <li class="rooms_devices-list-item green">
-                    <svg width="27" height="28">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonKettle"></use>
-                    </svg>
-                    <div>Kettle</div>
-                </li>
-                <li class="rooms_devices-list-item blue">
-                    <svg width="29" height="30">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonStove"></use>
-                    </svg>
-                    <div>Stove</div>
-                </li> -->
-                <!-- <li class="rooms_devices-list-item red">
-                    <svg width="32" height="40">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonDishwasher"></use>
-                    </svg>
-                    <div>Dishwasher</div>
-                </li>
-                <li class="rooms_devices-list-item green">
-                    <svg width="45" height="45">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonMulticooker"></use>
-                    </svg>
-                    <div>Multicooker</div>
-                </li>
-                <li class="rooms_devices-list-item blue">
-                    <svg width="31" height="28">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonTV"></use>
-                    </svg>
-                    <div>TV</div>
-                </li>
-                <li class="rooms_devices-list-item red">
-                    <svg width="43" height="30">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonMicrowave"></use>
-                    </svg>
-                    <div>Microwave</div>
-                </li>
-                <li class="rooms_devices-list-item green">
-                    <svg width="36" height="48">
-                        <use xlink:href="../assets/svg/sprite.svg#buttonGrill"></use>
-                    </svg>
-                    <div>Indoor Grill</div>
-                </li> -->
             </ul>
         </div>
     </div>

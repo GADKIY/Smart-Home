@@ -9,30 +9,6 @@
                     <div>{{r.name}}</div>
                 </button>
             </li>
-            <!-- <li class="rooms_selectors_list-item">
-                <button type="button" @click="viewRoom('Kitchen')">
-                    <svg width="48" height="41">
-                        <use xlink:href="../assets/svg/sprite.svg#kitchen"></use>
-                    </svg>
-                    <div>Kitchen</div>
-                </button>
-            </li>
-            <li class="rooms_selectors_list-item">
-                <button type="button" @click="viewRoom('Living Room')">
-                    <svg width="48" height="26">
-                        <use xlink:href="../assets/svg/sprite.svg#livingRoom"></use>
-                    </svg>
-                    <div>Living Room</div>
-                </button>
-            </li>
-            <li class="rooms_selectors_list-item">
-                <button type="button" @click="viewRoom('Bathroom')">
-                    <svg width="33" height="37">
-                        <use xlink:href="../assets/svg/sprite.svg#bathroom"></use>
-                    </svg>
-                    <div>Bathroom</div>
-                </button>
-            </li> -->
         </ul>
     </div>
 </div>
