@@ -4,22 +4,29 @@
         "icon":"bedroom",
         "width": 47,
         "height": 37,
-        "sensors": [
-            {
-                "name": "temperature",
-                "title": "Room's<br> Temperature",
-                "c": 26.4,
-                "f": 79.52,
-                "width": 22,
-                "height": 40
-            },
-            {
-                "humidity": 30
-            },
-            {
-                "lightning": 24
-            }
-        ],
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": 26.4,
+            "f": 79.52,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":30,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":28,
+            "width": 33,
+            "height": 33
+        },
         "devices":[
             {
                 "name": "AC",
@@ -45,11 +52,28 @@
         "width": 48,
         "height": 41,
         "temperature": {
-           "c": 23.5,
-           "f": 74.3
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": 23.5,
+            "f": 74.3,
+            "width": 22,
+            "height": 40
         },
-        "humidity": 40,
-        "lightning": 86,
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":40,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":86,
+            "width": 33,
+            "height": 33
+        },
         "devices":[
             {
                 "name": "Fridge",
@@ -123,11 +147,28 @@
         "width": 48,
         "height": 26,
         "temperature": {
-           "c": 25.2,
-           "f": 77.4
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": 25.2,
+            "f": 77.4,
+            "width": 22,
+            "height": 40
         },
-        "humidity": 35,
-        "lightning": 76,
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":35,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":76,
+            "width": 33,
+            "height": 33
+        },
         "devices":[
             {
                 "name": "AC",
@@ -153,11 +194,28 @@
         "width": 33,
         "height": 37,
         "temperature": {
-           "c": 27,
-           "f": 80.6
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": 27,
+            "f": 80.6,
+            "width": 22,
+            "height": 40
         },
-        "humidity": 70,
-        "lightning": 55,
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":70,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":55,
+            "width": 33,
+            "height": 33
+        },
         "devices":[
             {
                 "name": "Washbasin",

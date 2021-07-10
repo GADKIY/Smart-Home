@@ -35,6 +35,7 @@
     }
 
     &_status-parameter {
+        max-width: rem(100px);
         font-size: rem(15px);
         color: rgba($color: $font-color-black, $alpha: .63);
         margin-bottom: 16px;
