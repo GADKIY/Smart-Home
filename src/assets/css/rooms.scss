@@ -34,15 +34,28 @@
         }
     }
 
-    &_status-parameter {
-        max-width: rem(100px);
-        font-size: rem(15px);
-        color: rgba($color: $font-color-black, $alpha: .63);
-        margin-bottom: 16px;
-    }
-
     &_status-value {
         font-size: rem(36px);
+        div:nth-child(1){
+            color: rgba($color: $font-color-black, $alpha: .63);
+            max-width: rem(100px);
+            font-size: rem(15px);
+            margin-bottom: 16px;
+        }
+        div {
+            color: rgba($color: $font-color-black, $alpha: .75);
+        }
+    }
+    &_status-celsius {
+        span {
+            font-size: rem(22px);
+        }
+    }
+    &_status-fahrenheit {
+        margin-left: 26px;
+        span {
+            font-size: rem(22px);
+        }
     }
 
     &_parameter-scale {
@@ -50,7 +63,7 @@
         height: 176px;
         border-radius: 25px;
         position: relative;
-
+        color: $font-color-black;
         &.temperature {
             background-color: #FFE6E6;
         }
@@ -100,6 +113,7 @@
         &-title {
             margin-bottom: rem(27px);
             font-size: rem(24px);
+            color: rgba($color: $font-color-black, $alpha: .75);
         }
 
         &-list {
@@ -119,7 +133,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                transition: all .2s;
+                // transition: all .2s;
 
                 svg {
                     margin-bottom: 13px;
@@ -178,7 +192,6 @@
                     color: #c1c1c1;
                     border: none;
                     svg {
-                        transition: all .2s;
                         margin-bottom: 18px;
                     }
                     div {

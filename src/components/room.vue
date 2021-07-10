@@ -7,12 +7,12 @@
                     <div class="rooms_status-parameter">
                         {{info.temperature.name}}
                     </div>
-                    <span id="celsius" class="celsius">
+                    <div class="rooms_status-celsius">
                         {{info.temperature.c}}<span>&deg;C</span>
-                    </span><br>
-                    <span id="fahrenheit" class="fahrenheit">
+                    </div>
+                    <div class="rooms_status-fahrenheit">
                         {{info.temperature.f}}<span>&deg;F</span>
-                    </span>
+                    </div>
                 </div>
                 <div class="rooms_parameter-scale temperature">
                     <div class="rooms_parameter-scale_inner temperature"></div>
@@ -24,7 +24,9 @@
                     <div class="rooms_status-parameter">
                         {{info.humidity.name}}
                     </div>
-                    {{info.humidity.indicator}}%
+                    <div>
+                        {{info.humidity.indicator}}%
+                    </div>
                 </div>
                 <div class="rooms_parameter-scale humidity">
                     <div class="rooms_parameter-scale_inner humidity"></div>
@@ -36,7 +38,9 @@
                     <div class="rooms_status-parameter">
                         {{info.lightning.name}}
                     </div>
-                    {{info.lightning.indicator}}%
+                    <div>
+                        {{info.lightning.indicator}}%
+                    </div>
                 </div>
                 <div class="rooms_parameter-scale lightning">
                     <div class="rooms_parameter-scale_inner lightning"></div>

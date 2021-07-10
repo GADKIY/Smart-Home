@@ -7,8 +7,8 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": 26.4,
-            "f": 79.52,
+            "c": "+26.4",
+            "f": 79.5,
             "width": 22,
             "height": 40
         },
@@ -54,7 +54,7 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": 23.5,
+            "c": "+23.5",
             "f": 74.3,
             "width": 22,
             "height": 40
@@ -149,7 +149,7 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": 25.2,
+            "c": "+25.2",
             "f": 77.4,
             "width": 22,
             "height": 40
@@ -196,7 +196,7 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": 27,
+            "c": "+27",
             "f": 80.6,
             "width": 22,
             "height": 40
