@@ -25,29 +25,7 @@
                 <h6 class="statistics_list-item_title">Sorting</h6>
                 <div class="statistics_circle-container statistics_graph">
                     <div class="statistics_circle-graph-date">Apr, 2020</div>
-                    <div class="statistics_sorting-diagramma">
-                        <div ref="chartdiv4" class="graphCircle"></div>
-                    </div>
-                    <ul class="statistics_sorting-materials">
-                        <li class="statistics_sorting-materials-item">
-                            <span class="material-color">
-                                <!-- TODO: каждый кругляк своим цветом -->
-                            </span>
-                            <span class="mateial-name">Paper</span>
-                        </li>
-                        <li class="statistics_sorting-materials-item">
-                            <span class="material-color">
-                                <!-- TODO: каждый кругляк своим цветом -->
-                            </span>
-                            <span class="mateial-name">Glass</span>
-                        </li>
-                        <li class="statistics_sorting-materials-item">
-                            <span class="material-color">
-                                <!-- TODO: каждый кругляк своим цветом -->
-                            </span>
-                            <span class="mateial-name">Plastic</span>
-                        </li>
-                    </ul>
+                    <div ref="chartdiv4" class="graphCircle"></div>                                        
                 </div>
             </div>
             <div class="statistics_controls-center">
@@ -146,8 +124,8 @@
 }
 
 .graphCircle{
-    width: 117px;
-    height: 117px;
+    width: 100%;
+    height: 310px;
 }
 
 .graph,
@@ -390,14 +368,20 @@ export default{
             series1.labels.template.disabled = true;
             series1.ticks.template.disabled = true;
 
-            chart.radius = "60%";
+            chart.radius = "80%";
             chart.innerRadius = "40%";
 
             series1.colors.list = [
-                am4core.color("#EE777F"),
                 am4core.color("#1D2343"),
+                am4core.color("#EE777F"),
                 am4core.color("#65BDC0"),
             ];
+            chart.legend = new am4charts.Legend();
+            chart.legend.maxHeight = 150;
+            let marker = chart.legend.markers.template.children.getIndex(0);
+            marker.cornerRadius(12, 12, 12, 12);
+            marker.strokeWidth = 2;
+            marker.strokeOpacity = 1;
         }
     }
 }

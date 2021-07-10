@@ -123,8 +123,8 @@
                 "name": "AC",
                 "icon": {
                     "name":"buttonAc",
-                    "width": "29",
-                    "height": "30"
+                    "width": "34",
+                    "height": "32"
                 }
             },
             {
@@ -161,7 +161,7 @@
                 "name": "Bath",
                 "icon": {
                     "name":"buttonBath",
-                    "width": "32",
+                    "width": "38",
                     "height": "40"
                 }
             }
