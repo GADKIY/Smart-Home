@@ -25,8 +25,8 @@
                 "name": "AC",
                 "icon": {
                     "name":"buttonAc",
-                    "width": "29",
-                    "height": "30"
+                    "width": "42",
+                    "height": "40"
                 }
             },
             {
@@ -133,8 +133,8 @@
                 "name": "AC",
                 "icon": {
                     "name":"buttonAc",
-                    "width": "34",
-                    "height": "32"
+                    "width": "42",
+                    "height": "40"
                 }
             },
             {
