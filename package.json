@@ -11,6 +11,7 @@
     "@amcharts/amcharts4": "^4.10.20",
     "core-js": "^3.6.5",
     "node-sass": "^4.9.0",
+    "register-service-worker": "^1.7.1",
     "vodal": "^2.4.0",
     "vue": "^2.6.11",
     "vue-extend-layout": "^2.0.6",
