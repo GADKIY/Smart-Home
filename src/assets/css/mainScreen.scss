@@ -12,10 +12,9 @@
 }
 
 .main_screen{
-    height: 905px;
+    min-height: 100vh;
     width: 100%;
     display: flex;
-    // max-height: 905px;
     background: rgb(229, 229, 229);
     background: -moz-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
     background: -webkit-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
