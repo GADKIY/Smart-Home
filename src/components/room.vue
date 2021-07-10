@@ -7,10 +7,10 @@
                     <div class="rooms_status-parameter">
                         {{info.temperature.name}}
                     </div>
-                    <div id="celsius" class="celsius">
+                    <div class="rooms_status-celsius">
                         {{info.temperature.c}}<span>&deg;C</span>
                     </div>
-                    <div id="fahrenheit" class="fahrenheit">
+                    <div class="rooms_status-fahrenheit">
                         {{info.temperature.f}}<span>&deg;F</span>
                     </div>
                 </div>

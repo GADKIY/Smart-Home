@@ -46,6 +46,17 @@
             color: rgba($color: $font-color-black, $alpha: .75);
         }
     }
+    &_status-celsius {
+        span {
+            font-size: rem(22px);
+        }
+    }
+    &_status-fahrenheit {
+        margin-left: 26px;
+        span {
+            font-size: rem(22px);
+        }
+    }
 
     &_parameter-scale {
         width: 76px;
