@@ -22,29 +22,25 @@
             <li class="rooms_status-list-item">
                 <div class="rooms_status-value">
                     <div class="rooms_status-parameter">
-                        Room's<br> Humidity
+                        {{info.humidity.name}}
                     </div>
-                    40%
+                    {{info.humidity.indicator}}%
                 </div>
                 <div class="rooms_parameter-scale humidity">
                     <div class="rooms_parameter-scale_inner humidity"></div>
-                    <svg width="27" height="36">
-                        <use xlink:href="../assets/svg/sprite.svg#humidity"></use>
-                    </svg>
+                    <v-svg :width="info.humidity.width" :height="info.humidity.height" :viewBox="'0 0' + info.humidity.width + info.humidity.height" :sprite="info.humidity.icon"></v-svg>
                 </div>
             </li>
             <li class="rooms_status-list-item">
                 <div class="rooms_status-value">
                     <div class="rooms_status-parameter">
-                        Room's<br> Lightning
+                        {{info.lightning.name}}
                     </div>
-                    86%
+                    {{info.lightning.indicator}}%
                 </div>
                 <div class="rooms_parameter-scale lightning">
                     <div class="rooms_parameter-scale_inner lightning"></div>
-                    <svg width="33" height="33">
-                        <use xlink:href="../assets/svg/sprite.svg#lightning"></use>
-                    </svg>
+                    <v-svg :width="info.lightning.width" :height="info.lightning.height" :viewBox="'0 0' + info.lightning.width + info.lightning.height" :sprite="info.lightning.icon"></v-svg>
                 </div>
             </li>
         </ul>
