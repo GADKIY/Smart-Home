@@ -25,88 +25,21 @@
                 <h6 class="statistics_list-item_title">Sorting</h6>
                 <div class="statistics_circle-container statistics_graph">
                     <div class="statistics_circle-graph-date">Apr, 2020</div>
-                    <div ref="chartdiv4" class="graphCircle"></div>                                        
+                    <div ref="chartdiv4" class="graphCircle"></div>
                 </div>
             </div>
             <div class="statistics_controls-center">
                 <h6 class="statistics_list-item_title">Devices</h6>
                 <div class="statistics_graph statistics_controls">
                     <ul class="statistics_devices">
-                    <!-- TODO: Сверстать контейнеры для графиков и кнопок девайсов -->
                         <li class="statistics_devices-device-wrap" v-for="d in devices" :key="d">
                             <button type="button" class="statistics_devices-btn">
-                                <svg :width="d.icon.width" :height="d.icon.height">
-                                    <use :xlink:href="'/img/sprite.svg#' + d.icon.name"></use>
-                                </svg>
+                                <v-svg :width="d.icon.width" :height="d.icon.height" :viewBox="'0 0' + d.icon.width + d.icon.height" :sprite="d.icon.name"></v-svg>
                             </button>
                             <div>{{d.name}}</div>
                         </li>
                     </ul>
                 </div>
-                    <!-- <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn tv">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonTV"></use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            TV
-                        </div>
-                    </div> -->
-                    <!-- <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn kettle">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonKettle">
-                                </use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            Kettle
-                        </div>
-                    </div>
-                    <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn washer">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonWasher">
-                                </use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            Washer
-                        </div>
-                    </div>
-                    <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn fridge">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonFridge">
-                                </use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            Fridge
-                        </div>
-                    </div>
-                    <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn stove">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonStove">
-                                </use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            Stove
-                        </div>
-                    </div>
-                    <div class="statistics_controls-device-wrap">
-                        <button type="button" class="statistics_controls-btn pc">
-                            <svg>
-                                <use xlink:href="../assets/svg/sprite.svg#buttonPC"></use>
-                            </svg>
-                        </button>
-                        <div class="device_name">
-                            PC
-                        </div>
-                    </div> -->
             </div>
         </li>
     </ul>
@@ -128,8 +61,7 @@
     height: 200px;
 }
 
-.graph,
-.graphCircle {
+.graph {
     svg {
         g {
             g:nth-child(2) {
@@ -137,6 +69,26 @@
                     g {
                         g:nth-child(3){
                             g:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.graphCircle {
+    svg {
+        g {
+            g:nth-child(2) {
+                g:nth-child(2){
+                    g {
+                        g:nth-child(3){
+                            g[opacity]{
+                                display: none;
+                            }
+                            g[shape-rendering]{
                                 display: none;
                             }
                         }

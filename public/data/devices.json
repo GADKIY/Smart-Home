@@ -1,5 +1,21 @@
 [
     {
+        "name": "AC",
+        "icon": {
+            "name":"buttonAc",
+            "width": "34",
+            "height": "32"
+        }
+    },
+    {
+        "name": "TV",
+        "icon": {
+            "name":"buttonTV",
+            "width": "31",
+            "height": "28"
+        }
+    },
+    {
         "name": "Fridge",
         "icon": {
             "name":"buttonFridge",
@@ -40,14 +56,6 @@
         }
     },
     {
-        "name": "TV",
-        "icon": {
-            "name":"buttonTV",
-            "width": "31",
-            "height": "28"
-        }
-    },
-    {
         "name": "Microwave",
         "icon": {
             "name":"buttonMicrowave",
@@ -61,6 +69,22 @@
             "name":"buttonGrill",
             "width": "36",
             "height": "48"
+        }
+    },
+    {
+        "name": "Washbasin",
+        "icon": {
+            "name":"buttonWashbasin",
+            "width": "32",
+            "height": "40"
+        }
+    },
+    {
+        "name": "Bath",
+        "icon": {
+            "name":"buttonBath",
+            "width": "38",
+            "height": "40"
         }
     }
 ]
