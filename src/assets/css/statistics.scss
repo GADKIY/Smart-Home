@@ -1,5 +1,4 @@
 @import 'reset';
-@import 'variables';
 
 .statistics {
     width: 100%;
@@ -9,17 +8,18 @@
     }
 
     &_list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: rem(30px);
+        height: 100%;
 
         &-item {
             //общая обёртка с для графиков
-            width: calc(48.52%);
-
-            &:nth-child(-n+2) {
-                margin-bottom: 20px;
-            }
+            height: 100%;
+            width: 100%;
 
             &:last-child {
                 display: flex;
@@ -37,23 +37,15 @@
 
     &_graph {
         //это само поле графика
-        height: 301px;
+        height: calc(100% - 47px);
         max-width: 492px;
         box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
         border-radius: 30px;
-
-        &.small {
-            height: 258px;
-        }
-
-        &:nth-child(-n+3) {
-            background-color: #fff5f5;
-        }
+        background-color: $font-color-white;
     }
 
     &_circle-container {
         padding: 12px;
-        height: 258px;
     }
 
     &_sorting-diagramma {
@@ -103,25 +95,91 @@
 
     &_controls-center {
         //контейнер с кнопками
+        position: relative;
         width: calc(51.01%);
         max-width: 251px;
 
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 10%;
+            width: 100%;
+            bottom: rem(-1px);
+            left: 0;
+            border-radius: 0 0 30px 30px;
+            // background-color: #000;
+            background: rgb(255,245,245);
+            background: -moz-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,0) 40%, rgba(255,245,245,1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,0) 40%, rgba(255,245,245,1) 100%);
+            background: linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,0) 40%, rgba(255,245,245,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
+        }
+
     }
-
     &_controls {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
         padding: 34px 10px 28px;
-        height: 258px;
+    }
+    &_devices {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-height: 258px;
+        row-gap: 17px;
+        column-gap: 9px;
+        justify-content: center;
+        align-items: center;
 
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         &-device-wrap {
             text-align: center;
-            max-height: 91px;
+            // max-height: 91px;
+            &:nth-child(6n+1) button{
+                background-color: $button-color-blue;
 
-            .device_name {
-                font-size: rem(13px);
+                &:hover {
+                    background-color: lighten($color: $button-color-blue, $amount: 10);
+                }
+            }
+            &:nth-child(6n+2) button {
+                background-color: $button-color-red;
+
+                &:hover {
+                    background-color: darken($color: $button-color-red, $amount: 10);
+                }
+            }
+            &:nth-child(6n+3) button{
+                background-color: $button-color-green;
+
+                &:hover {
+                    background-color: darken($color: $button-color-green, $amount: 10);
+                }
+            }
+            &:nth-child(6n+4) button {
+                background-color: $button-color-red;
+
+                &:hover {
+                    background-color: darken($color: $button-color-red, $amount: 10);
+                }
+            }
+            &:nth-child(6n+5) button{
+                background-color: $button-color-green;
+
+                &:hover {
+                    background-color: darken($color: $button-color-green, $amount: 10);
+                }
+            }
+            &:nth-child(6n+6) button{
+                background-color: $button-color-blue;
+
+                &:hover {
+                    background-color: lighten($color: $button-color-blue, $amount: 10);
+                }
+            }
+            div {
+                font-size: rem(12px);
                 color: $font-color-grey;
             }
         }
@@ -133,60 +191,6 @@
             border: none;
             outline: none;
             margin-bottom: 4px;
-
-            &.tv {
-                background-color: $button-color-blue;
-
-                svg {
-                    width: 31px;
-                    height: 28px;
-                }
-            }
-
-            &.kettle {
-                background-color: $button-color-red;
-
-                svg {
-                    width: 27px;
-                    height: 28px;
-                }
-            }
-
-            &.washer {
-                background-color: $button-color-green;
-
-                svg {
-                    width: 25px;
-                    height: 28px;
-                }
-            }
-
-            &.fridge {
-                background-color: $button-color-red;
-
-                svg {
-                    width: 24px;
-                    height: 29px;
-                }
-            }
-
-            &.stove {
-                background-color: $button-color-green;
-
-                svg {
-                    width: 29px;
-                    height: 30px;
-                }
-            }
-
-            &.pc {
-                background-color: $button-color-blue;
-
-                svg {
-                    width: 29px;
-                    height: 24px;
-                }
-            }
         }
     }
 }

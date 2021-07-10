@@ -3,8 +3,8 @@
         <div class="security_form-wrap">
             <form class="security_form" @submit="login">
                 <input class="security_input" id="name" type="text" placeholder="Name" v-model="name">
-                <input class="security_input" id="pass" type="text" placeholder="Password" v-model="pass">
-                <button class="btn security_btn" type="submit">Enter</button>            
+                <input class="security_input" id="pass" type="password" placeholder="Password" v-model="pass">
+                <button class="btn security_btn" type="submit">Enter</button>
             </form>
         </div>
     </div>
@@ -15,6 +15,7 @@
 @import "../assets/css/mainScreen";
 
 .security{
+    margin-top: 74px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -23,7 +24,7 @@
     &_form-wrap{
         display: flex;
         align-items: center;
-        height: 600px;
+        justify-content: center;
         max-width: 400px;
         width: 90%;
     }

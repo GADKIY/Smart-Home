@@ -1,6 +1,4 @@
 @import 'reset';
-@import 'variables';
-
 
 .container{
     width: 90%;
@@ -14,40 +12,52 @@
 }
 
 .main_screen{
-    width: 100%;    
+    height: 905px;
+    width: 100%;
     display: flex;
-    max-height: 905px;
+    // max-height: 905px;
     background: rgb(229, 229, 229);
     background: -moz-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
     background: -webkit-linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
     background: linear-gradient(90deg, rgba(229, 229, 229, 1) 7%, rgba(101, 189, 192, 1) 7%, rgba(229, 229, 229, 1) 80%);
     &-control_bar{
+        position: relative;
         background-color: #65BDC0;
         width: 90%;
         max-width: 107px;
         text-align: center;
-        padding: 36px 0 177px 0;
+        padding: 36px 0 36px 0;
         border-radius: 60px 0 0 60px;
-        
     }
     &-logo{
         width: 69px;
         height: 69px;
-        margin: 0 auto 118px;
+        margin: 0 auto;
     }
     &-control-list{
+        position: absolute;
         text-align: center;
-        
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     &-control-item{
-        margin-bottom: 46px;
+        margin-bottom: 42px;
+        &:hover a,
+        &:active a {
+            color: $font-color-white;
+        }
+        &:hover svg,
+        &:active svg {
+            fill-opacity: 1;
+        }
         &:last-child{
             margin-bottom: 0;
         }
         svg{
            width: 36px;
            height: 36px;
-           margin-bottom: 18px; 
+           margin-bottom: 14px;
         }
         a{
             width: 100%;
@@ -61,9 +71,16 @@
     &-info_wrap{
         width: 100%;
         max-width: 1166px;
-        background-color: #fff;
+        background-color: $main-bgc;
         border-radius: 60px;
         padding: 36px 87px 31px 65px;
+    }
+    &-info_inner {
+        width: 100%;
+        height: calc(100% - 74px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     &-control_panel{
         text-align: end;
@@ -77,8 +94,8 @@
         }
         &-icon{
             width: 30px;
-            height: 30px;             
-            vertical-align: super;            
+            height: 30px;
+            vertical-align: super;
         }
     }
 }
