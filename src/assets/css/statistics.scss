@@ -11,7 +11,7 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 1fr;
         gap: rem(30px);
         height: 100%;
@@ -20,11 +20,13 @@
             //общая обёртка с для графиков
             height: 100%;
             width: 100%;
+            grid-column: span 2;
 
-            &:last-child {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
+            &:nth-last-child(1) {
+                grid-column: span 1;
+            }
+            &:nth-last-child(2) {
+                grid-column: span 1;
             }
         }
 
@@ -38,7 +40,8 @@
     &_graph {
         //это само поле графика
         height: calc(100% - 47px);
-        max-width: 492px;
+        width: 100%;
+        // max-width: 492px;
         box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
         border-radius: 30px;
         background-color: $font-color-white;
@@ -84,8 +87,10 @@
 
     &_circle-graph {
         //контейнер с круговой диаграммой
-        width: calc(42.88%);
         max-width: 211px;
+        margin-right: 30px;
+        height: 100%;
+        width: 100%;
 
         &-date {
             color: $font-color-grey;
@@ -96,8 +101,8 @@
     &_controls-center {
         //контейнер с кнопками
         position: relative;
-        width: calc(51.01%);
-        max-width: 251px;
+        height: 100%;
+        // max-width: 251px;
         &::before {
             content: '';
             position: absolute;
@@ -205,6 +210,70 @@
             border: none;
             outline: none;
             margin-bottom: 4px;
+        }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .statistics {
+        &_list {
+            grid-template-columns: repeat(3, 1fr);
+            &-item {
+                grid-column: span 3;
+    
+                &:nth-last-child(1) {
+                    grid-column: span 2;
+                }
+            }
+        }
+        &_devices {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .statistics {
+        &_devices {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .statistics {
+        &_list {
+            grid-template-columns: repeat(2, 1fr);
+            &-item {
+                grid-column: span 2;
+    
+                &:nth-last-child(1) {
+                    grid-column: span 1;
+                }
+            }
+        }
+        &_devices {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .statistics {
+        &_list {
+            grid-template-columns: repeat(1, 1fr);
+            // grid-auto-rows: inherit;
+            &-item {
+                grid-column: span 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .statistics {
+        &_devices {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

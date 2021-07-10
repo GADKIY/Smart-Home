@@ -1,14 +1,15 @@
 @import 'reset';
 
 .container{
-    width: 90%;
-    max-width: 1273px;
+    width: 100%;
+    max-width: rem(1273px);
     margin: 0 auto;
+    padding: 0 rem(10px);
 }
 
 .title{
     font-size: rem(48px);
-    letter-spacing: 1px;
+    letter-spacing: rem(1px);
     color: $font-color-black;
 }
 
@@ -24,14 +25,14 @@
         position: relative;
         background-color: #65BDC0;
         width: 90%;
-        max-width: 107px;
+        max-width: rem(107px);
         text-align: center;
-        padding: 36px 0 36px 0;
-        border-radius: 60px 0 0 60px;
+        padding: rem(36px) 0 rem(36px) 0;
+        border-radius: rem(60px) 0 0 rem(60px);
     }
     &-logo{
-        width: 69px;
-        height: 69px;
+        width: rem(69px);
+        height: rem(69px);
         margin: 0 auto;
     }
     &-control-list{
@@ -42,7 +43,7 @@
         transform: translate(-50%, -50%);
     }
     &-control-item{
-        margin-bottom: 42px;
+        margin-bottom: rem(42px);
 
         &:hover a,
         &:active a,
@@ -56,9 +57,9 @@
         }
 
         svg{
-           width: 36px;
-           height: 36px;
-           margin-bottom: 14px;
+           width: rem(36px);
+           height: rem(36px);
+           margin-bottom: rem(14px);
            color: rgba($font-color-white, $alpha: .65);
         }
 
@@ -73,10 +74,10 @@
     }
     &-info_wrap{
         width: 100%;
-        max-width: 1166px;
+        max-width: rem(1166px);
         background-color: $main-bgc;
-        border-radius: 60px;
-        padding: 36px 87px 31px 65px;
+        border-radius: rem(60px);
+        padding: rem(36px) rem(87px) rem(31px) rem(65px);
     }
     &-info_inner {
         width: 100%;
@@ -87,7 +88,7 @@
     }
     &-control_panel{
         text-align: end;
-        margin-bottom: 24px;
+        margin-bottom: rem(24px);
         button {
             a{
                 color: rgba($font-color-black,  $alpha: .65);
@@ -103,10 +104,13 @@
 @media screen and (max-height: 680px) {
     .main_screen{
         &-control-item {
-            margin-bottom: 20px;
+            margin-bottom: rem(20px);
             svg {
-                margin-bottom: 5px;
+                margin-bottom: rem(5px);
             }
+        }
+        &-info_wrap {
+            padding: rem(36px) rem(40px) rem(31px) rem(36px);
         }
     }
 }

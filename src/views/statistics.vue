@@ -28,6 +28,8 @@
                     <div ref="chartdiv4" class="graphCircle"></div>
                 </div>
             </div>
+        </li>
+        <li class="statistics_list-item">
             <div class="statistics_controls-center">
                 <h6 class="statistics_list-item_title">Devices</h6>
                 <div class="statistics_graph statistics_controls">
