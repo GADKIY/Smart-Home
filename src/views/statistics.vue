@@ -320,7 +320,7 @@ export default{
             series1.labels.template.disabled = true;
             series1.ticks.template.disabled = true;
 
-            chart.radius = "80%";
+            chart.radius = "100%";
             chart.innerRadius = "40%";
 
             series1.colors.list = [
