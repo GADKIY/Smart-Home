@@ -125,7 +125,7 @@
 
 .graphCircle{
     width: 100%;
-    height: 310px;
+    height: 200px;
 }
 
 .graph,
@@ -377,7 +377,7 @@ export default{
                 am4core.color("#65BDC0"),
             ];
             chart.legend = new am4charts.Legend();
-            chart.legend.maxHeight = 150;
+            // chart.legend.maxHeight = 150;
             let marker = chart.legend.markers.template.children.getIndex(0);
             marker.cornerRadius(12, 12, 12, 12);
             marker.strokeWidth = 2;
