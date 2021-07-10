@@ -34,7 +34,7 @@ export default {
         .get('data/rooms.json')
         .then((resp)=>{
             this.rooms = resp.data;
-            this.viewRoom('Kitchen');
+            this.viewRoom('Bedroom');
         })
   },
   methods: {

@@ -7,8 +7,8 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": 26.4,
-            "f": 79.52,
+            "c": "+26.4",
+            "f": "79.52",
             "width": 22,
             "height": 40
         },

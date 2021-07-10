@@ -11,9 +11,7 @@
                         <ul class="main_screen-control-list">
                             <li class="main_screen-control-item">
                                 <router-link to="/login">
-                                    <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#login"></use>
-                                    </svg>
+                                    <v-svg sprite="login"></v-svg>
                                     <div>Login</div>
                                 </router-link>
                             </li>

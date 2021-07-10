@@ -11,36 +11,10 @@
                             </router-link>
                         </div>
                         <ul class="main_screen-control-list">
-                            <li class="main_screen-control-item">
-                                <router-link to="/rooms">
-                                    <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#rooms"></use>
-                                    </svg>
-                                    <div>Rooms</div>
-                                </router-link>
-                            </li>
-                            <li class="main_screen-control-item">
-                                <router-link to="/statistics">
-                                   <svg>
-                                       <use xlink:href="@/assets/svg/sprite.svg#statistics"></use>
-                                   </svg>
-                                   <div>Statistics</div>
-                                </router-link>
-                            </li>
-                            <li class="main_screen-control-item">
-                                <router-link to="/members">
-                                    <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#members"></use>
-                                    </svg>
-                                    <div>Members</div>
-                                </router-link>
-                            </li>
-                            <li class="main_screen-control-item">
-                                <router-link to="/billing">
-                                    <svg>
-                                        <use xlink:href="@/assets/svg/sprite.svg#billing"></use>
-                                    </svg>
-                                    <div>Billing</div>
+                            <li class="main_screen-control-item" v-for="ci in cBar" :key="ci">
+                                <router-link :to="'/'+ci.name">
+                                    <v-svg :sprite="ci.name"></v-svg>
+                                    <div>{{ci.title}}</div>
                                 </router-link>
                             </li>
                         </ul>
@@ -92,8 +66,21 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default {
     name: "default",
+    data(){
+        return {
+            cBar:[]
+        }
+    },
+    created(){
+        axios
+            .get('data/control-bar.json')
+            .then((resp)=>{
+                this.cBar = resp.data;
+         })
+    },
     methods:{
         logout(){
             localStorage.removeItem("user");
