@@ -3,13 +3,13 @@
     <room :info="roomInfo"></room>
     <div class="rooms_selectors slider">
         <ul class="rooms_selectors_list">
-            <li class="rooms_selectors_list-item" v-for="r in rooms.devices" :key="r">
-                <button type="button" @click="viewRoom('Bedroom')">
-                    <v-svg width="47" height="37" :viewBox="'0 0' + 47 + 37" sprite="bedroom"></v-svg>
-                    <div>Bedroom</div>
+            <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r">
+                <button type="button" @click="viewRoom(r.name)">
+                    <v-svg :width="r.width" :height="r.height" :viewBox="'0 0' + r.width + r.height" :sprite="r.icon"></v-svg>
+                    <div>{{r.name}}</div>
                 </button>
             </li>
-            <li class="rooms_selectors_list-item">
+            <!-- <li class="rooms_selectors_list-item">
                 <button type="button" @click="viewRoom('Kitchen')">
                     <svg width="48" height="41">
                         <use xlink:href="../assets/svg/sprite.svg#kitchen"></use>
@@ -32,7 +32,7 @@
                     </svg>
                     <div>Bathroom</div>
                 </button>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
