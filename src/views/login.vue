@@ -88,7 +88,7 @@ export default {
                     alert("NO NO NO");
                 }
             }else{
-                alert("NO ON");
+                alert("NO NO");
             }
         }
     },

@@ -40,15 +40,9 @@ export default {
 @import "../assets/css/mainScreen";
 
 
-.main_screen{
-  height: rem(905px);
-}
-.auth-wrapper {
-  width: 100%;
-  height: 100vh;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // background-image: linear-gradient(to bottom right, #004d40, #00bfa5);
+@media screen and (max-width: 767px) {
+    .main_screen-info_wrap {
+        height: 100vh;
+    }
 }
 </style>
