@@ -58,7 +58,7 @@
 
 .graphCircle{
     width: 100%;
-    height: 200px;
+    height: calc(100% - 11px);
 }
 
 .graph {
