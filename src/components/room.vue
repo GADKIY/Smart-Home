@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="rooms_parameter-scale temperature">
-                    <div class="rooms_parameter-scale_inner temperature"></div>
+                    <div class="rooms_parameter-scale_inner temperature" :style="{height: info.temperature.c + '%'}"></div>
                     <v-svg :width="info.temperature.width" :height="info.temperature.height" :viewBox="'0 0' + info.temperature.width + info.temperature.height" :sprite="info.temperature.icon"></v-svg>
                 </div>
             </li>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="rooms_parameter-scale humidity">
-                    <div class="rooms_parameter-scale_inner humidity"></div>
+                    <div class="rooms_parameter-scale_inner humidity" :style="{height: info.humidity.indicator + '%'}"></div>
                     <v-svg :width="info.humidity.width" :height="info.humidity.height" :viewBox="'0 0' + info.humidity.width + info.humidity.height" :sprite="info.humidity.icon"></v-svg>
                 </div>
             </li>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="rooms_parameter-scale lightning">
-                    <div class="rooms_parameter-scale_inner lightning"></div>
+                    <div class="rooms_parameter-scale_inner lightning" :style="{height: info.lightning.indicator + '%'}"></div>
                     <v-svg :width="info.lightning.width" :height="info.lightning.height" :viewBox="'0 0' + info.lightning.width + info.lightning.height" :sprite="info.lightning.icon"></v-svg>
                 </div>
             </li>

@@ -86,18 +86,15 @@
             border-radius: 0 0 25px 25px;
 
             &.temperature {
-                background-color: $button-color-red;
-                height: 50%;
+                background-color: $button-color-red;                
             }
 
             &.humidity {
-                background-color: $button-color-green;
-                height: 35%;
+                background-color: $button-color-green;                
             }
 
             &.lightning {
-                background-color: $button-color-blue;
-                height: 80%;
+                background-color: $button-color-blue;                
             }
         }
 
