@@ -231,26 +231,36 @@
             }
 
             &.wifi {
-                background-color: $button-color-red;
+                background-color: #a9a9a9;
+                &.active{
+                    background-color: $button-color-red;
+    
+                    &:hover {
+                        background-color: darken($color: $button-color-red, $amount: 8);
+                    }
 
-                &:hover {
-                    background-color: darken($color: $button-color-red, $amount: 8);
                 }
             }
 
             &.music {
-                background-color: $button-color-green;
-
-                &:hover {
-                    background-color: darken($color: $button-color-green, $amount: 8);
+                background-color: #a9a9a9;
+                &.active{
+                    background-color: $button-color-green;
+    
+                    &:hover {
+                        background-color: darken($color: $button-color-green, $amount: 8);
+                    }
                 }
             }
 
             &.intercom {
-                background-color: $button-color-blue;
-
-                &:hover {
-                    background-color: darken($color: $button-color-blue, $amount: 8);
+                background-color: #a9a9a9;
+                &.active{
+                    background-color: $button-color-blue;
+    
+                    &:hover {
+                        background-color: darken($color: $button-color-blue, $amount: 8);
+                    }
                 }
             }
         }

@@ -109,19 +109,19 @@
                 Shortcts
             </div>
             <div class="member_controls-btn_wrap">
-                <button type="button" class="member_controls-btn wifi">
+                <button type="button" class="member_controls-btn wifi" :class="isActive?'wifi':'active'" @click="changeAct(true)">
                     <svg width="32" height="23">
                         <use xlink:href="../assets/svg/sprite.svg#wifi"></use>
                     </svg>
                     <div>WI-FI</div>
                 </button>
-                <button type="button" class="member_controls-btn music">
+                <button type="button" class="member_controls-btn music" :class="isActive?'music':'active'" @click="changeAct(true)">
                     <svg width="25" height="26">
                         <use xlink:href="../assets/svg/sprite.svg#music"></use>
                     </svg>
                     <div>Music</div>
                 </button>
-                <button type="button" class="member_controls-btn intercom">
+                <button type="button" class="member_controls-btn intercom" :class="isActive?'intercom':'active'" @click="changeAct(true)">
                     <svg width="22" height="22">
                         <use xlink:href="../assets/svg/sprite.svg#intercom"></use>
                     </svg>
@@ -136,3 +136,27 @@
 <style lang="scss">
 @import '../assets/css/member';
 </style>
+
+<script>
+export default {
+    data(){
+        return{
+            isActive: false
+        }
+    },
+    created(){
+        },
+    methods:{
+         changeAct(active){             
+             if(this.isActive === false){
+                this.isActive = active;
+                
+            }else{
+                this.isActive = !active;
+            }
+             
+         }
+        
+    }
+}
+</script>
