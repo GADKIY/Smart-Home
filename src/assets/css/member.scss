@@ -41,16 +41,50 @@
         }
 
         &.memb-home {
+            position: relative;
             width: calc(24.97%);
             max-width: 212px;
-            padding-left: 22px;
-
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 75%;
+                width: 25px;
+                bottom: 0;
+                left: 0;
+                border-radius: 0 0 0 30px;
+                background: rgb(255,255,255);
+                background: -moz-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                background: -webkit-linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 75%;
+                width: 25px;
+                bottom: 0;
+                right: 0;
+                border-radius: 0 0 30px 0;
+                background: rgb(255,255,255);
+                background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+            }
             .member_parameter-name {
                 margin-bottom: 12px;
+                margin-left: 22px;
             }
 
             .memb-home-value {
                 display: flex;
+                overflow-x: scroll;
+                &::-webkit-scrollbar {
+                display: none;
+                }
             }
         }
 
@@ -62,7 +96,6 @@
         &-time {
             font-size: rem(50px);
             color: $font-color-grey2;
-            
         }
 
         &-inner_wrap {
@@ -80,6 +113,7 @@
     }
 
     &_icon-wrap {
+        margin-left: 22px;
         margin-right: 20px;
         &:nth-child(3n+1){
             color: $button-color-red;

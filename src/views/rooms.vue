@@ -5,12 +5,12 @@
             <ul class="rooms_selectors_list">
                 <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r">
                     <button type="button" @click="viewRoom(r.name)">
-                        <v-svg :width="r.width" :height="r.height" :viewBox="'0 0' + r.width + r.height" :sprite="r.icon"></v-svg>
+                        <v-svg :width="r.width" :height="r.height" :viewBox="'0 0 ' + r.width + ' ' + r.height" :sprite="r.icon"></v-svg>
                         <div>{{r.name}}</div>
                     </button>
                 </li>
             </ul>
-        </div>        
+        </div>
 </div>
 </template>
 

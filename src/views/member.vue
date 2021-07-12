@@ -29,12 +29,12 @@
             <div class="member_parameter-name">
                 Members at home:
             </div>
-            <div class="memb-home-value">
-                <div class="member_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
+            <ul class="memb-home-value" id="memb-home-scroll">
+                <li class="member_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
                     <v-svg width="46" height="46" sprite="profile"></v-svg>
                     <div>{{mH}}</div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </li>
     </ul>
     <div class="member_controls-title">
@@ -103,15 +103,15 @@
             <div class="member_controls-btn_group">
                 <div class="member_controls-btn_wrap">
                     <input type="checkbox" id="wifi">
-                    <label for="wifi" class="member_controls-btn"><v-svg width="32" height="32" viewport="0 0 32 32" sprite="wifi"></v-svg><div>WI-FI</div></label>
+                    <label for="wifi" class="member_controls-btn"><v-svg width="32" height="32" viewBox="0 0 32 32" sprite="wifi"></v-svg><div>WI-FI</div></label>
                 </div>
                 <div class="member_controls-btn_wrap">
                     <input type="checkbox" id="music">
-                    <label for="music" class="member_controls-btn"><v-svg width="25" height="26" viewport="0 0 25 26" sprite="music"></v-svg><div>Music</div></label>
+                    <label for="music" class="member_controls-btn"><v-svg width="25" height="26" viewBox="0 0 25 26" sprite="music"></v-svg><div>Music</div></label>
                 </div>
                 <div class="member_controls-btn_wrap">
                     <input type="checkbox" id="intercom">
-                    <label for="intercom" class="member_controls-btn"><v-svg width="22" height="22" viewport="0 0 22 22" sprite="intercom"></v-svg><div>Intercom</div></label>
+                    <label for="intercom" class="member_controls-btn"><v-svg width="22" height="22" viewBox="0 0 22 22" sprite="intercom"></v-svg><div>Intercom</div></label>
                 </div>
             </div>
         </li>
@@ -152,28 +152,15 @@ export default{
                 i = "0"+i;
             }
             return i;
+        },
+        xScroll(){
+            const scrollContainer = document.querySelector("#memb-home-scroll");
+
+            scrollContainer.addEventListener("wheel", (evt) => {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            });
         }
     }
 }
-// export default {
-//     data(){
-//         return{
-//             isActive: false
-//         }
-//     },
-//     created(){
-//         },
-//     methods:{
-//          changeAct(active){
-//              if(this.isActive === false){
-//                 this.isActive = active;
-
-//             }else{
-//                 this.isActive = !active;
-//             }
-//          }
-//     }
-// }
-
-
 </script>
