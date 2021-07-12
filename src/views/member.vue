@@ -124,14 +124,22 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default{
+    name: "member",
     data(){
         return{
+            membersHome:[],
             timeStamp: ''
         }
     },
     created(){
         setInterval(this.getNow, 1000);
+        axios
+            .get('data/membersHome.json')
+            .then((resp)=>{
+                this.membersHome = resp.data;
+         });
     },
     methods:{
         getNow(){
@@ -166,20 +174,6 @@ export default{
 //          }
 //     }
 // }
-import axios from 'axios';
-export default {
-    name: "member",
-    data(){
-        return {
-            membersHome:[]
-        }
-    },
-    created(){
-        axios
-            .get('data/membersHome.json')
-            .then((resp)=>{
-                this.membersHome = resp.data;
-         })
-    }
-}
+
+
 </script>
