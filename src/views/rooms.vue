@@ -1,16 +1,16 @@
 <template>
     <div class="rooms">
-    <room :info="roomInfo"></room>
-    <div class="rooms_selectors slider">
-        <ul class="rooms_selectors_list">
-            <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r">
-                <button type="button" @click="viewRoom(r.name)">
-                    <v-svg :width="r.width" :height="r.height" :viewBox="'0 0' + r.width + r.height" :sprite="r.icon"></v-svg>
-                    <div>{{r.name}}</div>
-                </button>
-            </li>
-        </ul>
-    </div>
+        <room :info="roomInfo"></room>
+        <div class="rooms_selectors slider">
+            <ul class="rooms_selectors_list">
+                <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r">
+                    <button type="button" @click="viewRoom(r.name)">
+                        <v-svg :width="r.width" :height="r.height" :viewBox="'0 0' + r.width + r.height" :sprite="r.icon"></v-svg>
+                        <div>{{r.name}}</div>
+                    </button>
+                </li>
+            </ul>
+        </div>        
 </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   data(){
       return{
         rooms:[],
-        roomInfo:{}
+        roomInfo:{},
       }
   },
   created(){
@@ -43,7 +43,7 @@ export default {
       }
   },
   components: {
-      room
+      room,
   }
 }
 </script>

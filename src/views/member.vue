@@ -9,7 +9,7 @@
                 Time
             </div>
             <div class="member_parameter-time">
-                3:15 pm
+                {{timeStamp}} <span>pm</span>
             </div>
         </li>
         <li class="member_parameter out-temp">
@@ -150,6 +150,29 @@
 </style>
 
 <script>
+export default{
+    data(){
+        return{
+            timeStamp: ''
+        }
+    },
+    created(){
+        setInterval(this.getNow, 1000);
+    },
+    methods:{
+        getNow(){
+            const today = new Date();
+            const time = this.addZero(today.getHours()) + ":" + this.addZero(today.getMinutes()) + ":" + this.addZero(today.getSeconds());
+            this.timeStamp = time;
+        },
+        addZero(i){
+            if(i<10){
+                i = "0"+i;
+            }
+            return i;
+        }
+    }
+}
 // export default {
 //     data(){
 //         return{

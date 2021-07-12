@@ -60,8 +60,11 @@
         }
 
         &-time {
-            font-size: rem(51px);
+            font-size: rem(40px);
             color: $font-color-grey2;
+            span{
+                font-size: rem(20px);
+            }
         }
 
         &-inner_wrap {
