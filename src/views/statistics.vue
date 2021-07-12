@@ -35,8 +35,8 @@
                 <div class="statistics_graph statistics_controls">
                     <ul class="statistics_devices">
                         <li class="statistics_devices-device-wrap" v-for="d in devices" :key="d">
-                            <button type="button" class="statistics_devices-btn">
-                                <v-svg :width="d.icon.width" :height="d.icon.height" :viewBox="'0 0' + d.icon.width + d.icon.height" :sprite="d.icon.name"></v-svg>
+                            <button type="button" class="statistics_devices-btn" @click="showModal = true">
+                                <v-svg :width="d.icon.width" :height="d.icon.height" :viewBox="'0 0 '+ d.icon.width + ' '+ d.icon.height" :sprite="d.icon.name"></v-svg>
                             </button>
                             <div>{{d.name}}</div>
                         </li>
@@ -45,6 +45,11 @@
             </div>
         </li>
     </ul>
+    <modal v-if="showModal" @close="showModal = false" :class="showModal?'opened':''">
+        <div slot="header">
+            Custom header
+        </div>
+    </modal>
 </div>
 </template>
 
@@ -107,13 +112,19 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import axios from 'axios';
+import modal from '@/components/modal';
+
 am4core.useTheme(am4themes_animated);
 
 export default{
     data(){
         return{
-            devices:[]
+            devices:[],
+            showModal: false
         }
+    },
+    components:{
+        modal
     },
     created(){
       axios
