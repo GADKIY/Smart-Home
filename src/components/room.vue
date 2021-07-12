@@ -50,12 +50,14 @@
         </ul>
         <div class="rooms_devices">
             <div class="rooms_devices-title">Devices</div>
-            <ul class="rooms_devices-list">
-                <li class="rooms_devices-list-item" v-for="rd in info.devices" :key="rd" @click="showModal = true">
-                    <v-svg :width="rd.icon.width" :height="rd.icon.height" :viewBox="'0 0 ' + rd.icon.width + ' ' + rd.icon.height" :sprite="rd.icon.name"></v-svg>
-                    <div>{{rd.name}}</div>
-                </li>
-            </ul>
+            <div class="rooms_devices-wrap">
+                <ul class="rooms_devices-list">
+                    <li class="rooms_devices-list-item" v-for="rd in info.devices" :key="rd" @click="showModal = true">
+                        <v-svg :width="rd.icon.width" :height="rd.icon.height" :viewBox="'0 0 ' + rd.icon.width + ' ' + rd.icon.height" :sprite="rd.icon.name"></v-svg>
+                        <div>{{rd.name}}</div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <modal v-if="showModal" @close="showModal = false" :class="showModal?'opened':''">
             <div slot="header">
