@@ -113,8 +113,10 @@
     }
 
     &_icon-wrap {
-        margin-left: 22px;
-        margin-right: 20px;
+        margin-right: 24px;
+        &:nth-child(1) {
+            margin-left: 22px;
+        }
         &:nth-child(3n+1){
             color: $button-color-red;
 
