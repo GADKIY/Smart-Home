@@ -139,7 +139,7 @@ export default{
             .get('data/membersHome.json')
             .then((resp)=>{
                 this.membersHome = resp.data;
-         });
+        });
     },
     methods:{
         getNow(){
@@ -152,15 +152,14 @@ export default{
                 i = "0"+i;
             }
             return i;
-        },
-        xScroll(){
-            const scrollContainer = document.querySelector("#memb-home-scroll");
-
-            scrollContainer.addEventListener("wheel", (evt) => {
-                evt.preventDefault();
-                scrollContainer.scrollLeft += evt.deltaY;
-            });
         }
+        // scrollX() {
+        //     let scrollContainer = document.querySelector('#memb-home-scroll')
+        //     scrollContainer.addEventListener('wheel', (e)=> {
+        //         e.preventDefault();
+        //         scrollContainer.scrollLeft += e.deltaY;
+        //     })
+        // }
     }
 }
 </script>
