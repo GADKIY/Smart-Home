@@ -9,7 +9,7 @@
                 Time
             </div>
             <div class="member_parameter-time">
-                {{timeStamp}} <span>pm</span>
+                {{timeStamp}}
             </div>
         </li>
         <li class="member_parameter out-temp">
