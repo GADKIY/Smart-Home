@@ -29,18 +29,10 @@
             <div class="member_parameter-name">
                 Members at home:
             </div>
-            <div class="member_parameter-value-2">
-                <div class="member_icon-wrap">
-                    <svg width="46" height="46" class="green">
-                        <use xlink:href="../assets/svg/sprite.svg#profilegreen"></use>
-                    </svg>
-                    <div>Annie</div>
-                </div>
-                <div class="member_icon-wrap">
-                    <svg width="46" height="46" class="red">
-                        <use xlink:href="../assets/svg/sprite.svg#profilered"></use>
-                    </svg>
-                    <div>John</div>
+            <div class="memb-home-value">
+                <div class="member_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
+                    <v-svg width="46" height="46" sprite="profile"></v-svg>
+                    <div>{{mH}}</div>
                 </div>
             </div>
         </li>
@@ -106,7 +98,7 @@
         </li>
         <li class="member_controls-item shortcuts">
             <div class="member_controls-name">
-                Shortcts
+                Shortcuts
             </div>
             <div class="member_controls-btn_group">
                 <div class="member_controls-btn_wrap">
@@ -121,24 +113,6 @@
                     <input type="checkbox" id="intercom">
                     <label for="intercom" class="member_controls-btn"><v-svg width="22" height="22" viewport="0 0 22 22" sprite="intercom"></v-svg><div>Intercom</div></label>
                 </div>
-                <!-- <button type="button" class="member_controls-btn wifi" :class="isActive?'wifi':'active'" @click="changeAct(true)">
-                    <svg width="32" height="23">
-                        <use xlink:href="../assets/svg/sprite.svg#wifi"></use>
-                    </svg>
-                    <div>WI-FI</div>
-                </button>
-                <button type="button" class="member_controls-btn music" :class="isActive?'music':'active'" @click="changeAct(true)">
-                    <svg width="25" height="26">
-                        <use xlink:href="../assets/svg/sprite.svg#music"></use>
-                    </svg>
-                    <div>Music</div>
-                </button>
-                <button type="button" class="member_controls-btn intercom" :class="isActive?'intercom':'active'" @click="changeAct(true)">
-                    <svg width="22" height="22">
-                        <use xlink:href="../assets/svg/sprite.svg#intercom"></use>
-                    </svg>
-                    <div>Intercom</div>
-                </button> -->
             </div>
         </li>
     </ul>
@@ -150,23 +124,20 @@
 </style>
 
 <script>
-// export default {
-//     data(){
-//         return{
-//             isActive: false
-//         }
-//     },
-//     created(){
-//         },
-//     methods:{
-//          changeAct(active){
-//              if(this.isActive === false){
-//                 this.isActive = active;
-
-//             }else{
-//                 this.isActive = !active;
-//             }
-//          }
-//     }
-// }
+import axios from 'axios';
+export default {
+    name: "member",
+    data(){
+        return {
+            membersHome:[]
+        }
+    },
+    created(){
+        axios
+            .get('data/membersHome.json')
+            .then((resp)=>{
+                this.membersHome = resp.data;
+         })
+    }
+}
 </script>
