@@ -206,17 +206,52 @@
 
         }
 
-        &-btn_wrap {
+        &-btn_group {
             display: flex;
             flex-direction: column;
+            position: relative;
         }
-
+        &-btn_wrap {
+            margin-bottom: rem(14px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+            input {
+                position: absolute;
+                cursor: pointer;
+                opacity: 0;
+                height: 0;
+                width: 0;
+            }
+            &:nth-child(3){
+                svg {
+                    margin-left: rem(10px);
+                }
+            }
+            &:nth-child(1)input:checked + .member_controls-btn{
+                background-color: $button-color-red;
+                &:hover {
+                    background-color: darken($color: $button-color-red, $amount: 8);
+                }
+            }
+            &:nth-child(2)input:checked + .member_controls-btn{
+                background-color: $button-color-green;
+                &:hover {
+                    background-color: darken($color: $button-color-green, $amount: 8);
+                }
+            }
+            &:nth-child(3)input:checked + .member_controls-btn{
+                background-color: $button-color-blue;
+                &:hover {
+                    background-color: darken($color: $button-color-blue, $amount: 8);
+                }
+            }
+        }
         &-btn {
             width: 100%;
-            height: 74px;
-            border-radius: 18px;
+            height: rem(74px);
+            border-radius: rem(18px);
             border: none;
-            margin-bottom: 14px;
             color: $font-color-white;
             font-size: rem(14px);
             display: flex;
@@ -225,44 +260,7 @@
             font-family: 'Lack';
             cursor: pointer;
             transition: .3s;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            &.wifi {
-                background-color: #a9a9a9;
-                &.active{
-                    background-color: $button-color-red;
-    
-                    &:hover {
-                        background-color: darken($color: $button-color-red, $amount: 8);
-                    }
-
-                }
-            }
-
-            &.music {
-                background-color: #a9a9a9;
-                &.active{
-                    background-color: $button-color-green;
-    
-                    &:hover {
-                        background-color: darken($color: $button-color-green, $amount: 8);
-                    }
-                }
-            }
-
-            &.intercom {
-                background-color: #a9a9a9;
-                &.active{
-                    background-color: $button-color-blue;
-    
-                    &:hover {
-                        background-color: darken($color: $button-color-blue, $amount: 8);
-                    }
-                }
-            }
+            background-color: #a9a9a9;
         }
     }
 
