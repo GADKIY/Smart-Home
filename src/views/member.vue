@@ -46,11 +46,17 @@
                 Light Intensity
             </div>
             <div class="member_controls-controler">
-                <div class="member_controls-controler_scale">
-                    <div class="member_controls-value">
-                        83%
-                    </div>
-                </div>
+                <round-slider
+                v-model="sliderValue"
+                start-angle="315"
+                end-angle="+270"
+                line-cap="round"
+                radius="71.5"
+                pathColor="#FFF"
+                rangeColor="#65BDC0"
+                tooltipColor="#000"
+                mouseScrollAction="true"
+                />
             </div>
             <div class="member_range-wrap">
                 <div class="member_controls-from">
@@ -66,11 +72,17 @@
                 Air Conditioning
             </div>
             <div class="member_controls-controler">
-                <div class="member_controls-controler_scale">
-                    <div class="member_controls-value">
-                        36%
-                    </div>
-                </div>
+                <round-slider
+                v-model="sliderValue2"
+                start-angle="315"
+                end-angle="+270"
+                line-cap="round"
+                radius="71.5"
+                pathColor="#FFF"
+                rangeColor="#3a3434b5"
+                tooltipColor="#000"
+                mouseScrollAction="true"
+                />
             </div>
             <div class="member_range-wrap">
                 <div class="member_controls-from">
@@ -125,16 +137,24 @@
 
 <script>
 import axios from 'axios';
+import RoundSlider from 'vue-round-slider'
 export default{
-    name: "member",
+    components:{
+        RoundSlider,
+    },
+    name: "member",    
     data(){
         return{
             membersHome:[],
-            timeStamp: ''
+            timeStamp: '',
+            curWeather:[],
+            sliderValue: 83,
+            sliderValue2:60
         }
     },
     created(){
         setInterval(this.getNow, 1000);
+        this.weather();
         axios
             .get('data/membersHome.json')
             .then((resp)=>{
@@ -152,6 +172,13 @@ export default{
                 i = "0"+i;
             }
             return i;
+        },
+        weather(){
+            axios
+                .get('https://api.openweathermap.org/data/2.5/weather?lat={50.45244145440475}&lon={30.525787409741707}&appid={887679a68106bb2abdab58c6f22dd493}')
+                .then((resp)=>{
+                    this.curWeather = resp.data;                    
+                })
         }
         // scrollX() {
         //     let scrollContainer = document.querySelector('#memb-home-scroll')
