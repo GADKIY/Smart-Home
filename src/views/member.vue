@@ -79,7 +79,7 @@
                 line-cap="round"
                 radius="71.5"
                 pathColor="#FFF"
-                rangeColor="#3a3434b5"
+                rangeColor="#3a3 434b5"
                 tooltipColor="#000"
                 mouseScrollAction="true"
                 />
@@ -175,7 +175,7 @@ export default{
         },
         weather(){
             axios
-                .get('https://api.openweathermap.org/data/2.5/weather?lat={50.45244145440475}&lon={30.525787409741707}&appid={887679a68106bb2abdab58c6f22dd493}')
+                .get('http://api.openweathermap.org/data/2.5/weather?lat=50.45244145440475&lon=30.525787409741707&units=metric&appid=49c39dbc9b3b6308b6d9424f48b250a5')
                 .then((resp)=>{
                     this.curWeather = resp.data;                    
                 })
