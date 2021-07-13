@@ -78,6 +78,7 @@
             margin-bottom: rem(19px);
 
             span {
+                margin-right: rem(10px);
                 &:first-child {
                     color: rgba($color: $font-color-black, $alpha: .51);
                 }
@@ -314,6 +315,12 @@ table {
             &-total {
                 margin-bottom: rem(25px);
             }
+        }
+        .title_wrap {
+            flex-wrap: wrap;
+        }
+        .markers_list {
+            margin-bottom: rem(10px);
         }
     }
 }
