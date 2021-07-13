@@ -79,7 +79,7 @@
                 line-cap="round"
                 radius="71.5"
                 pathColor="#FFF"
-                rangeColor="#3a3434b5"
+                rangeColor="#1D2343"
                 tooltipColor="#000"
                 mouseScrollAction="true"
                 />
