@@ -7,7 +7,6 @@
                 Invoice History
             </div>
             <div class="utility_billing-invoice_screen">
-                <!-- TODO: здесь должна быть табличка с историей счетов -->
                 <table>
                     <thead>
                         <tr>
@@ -20,63 +19,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>000245</td>
-                            <td>Water</td>
-                            <td>March</td>
-                            <td>04/15/2020</td>
-                            <td>$56.78</td>
+                        <tr v-for="info in invoiceList" :key="info.number">
+                            <td>{{info.number}}</td>
+                            <td>{{info.category}}</td>
+                            <td>{{info.month}}</td>
+                            <td>{{info.dueDate}}</td>
+                            <td>${{info.amountDue}}</td>
                             <td class="status">
-                                <span class="unpaid">
-                                    Unpaid
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000244</td>
-                            <td>Waste</td>
-                            <td>March</td>
-                            <td>04/12/2020</td>
-                            <td>$14.92</td>
-                            <td class="status">
-                                <span class="unpaid">
-                                    Unpaid
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000243</td>
-                            <td>Electricity</td>
-                            <td>March</td>
-                            <td>04/06/2020</td>
-                            <td>$86.98</td>
-                            <td class="status">
-                                <span class="paid">
-                                    Paid
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000242</td>
-                            <td>Water</td>
-                            <td>February</td>
-                            <td>03/15/2020</td>
-                            <td>$53.78</td>
-                            <td class="status">
-                                <span class="paid">
-                                    Paid
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>000241</td>
-                            <td>Waste</td>
-                            <td>February</td>
-                            <td>03/12/2020</td>
-                            <td>$13.98</td>
-                            <td class="status">
-                                <span class="paid">
-                                    Paid
+                                <span :class="info.status" @click="prePay(info.number, info.status)">
+                                    {{info.status}}
                                 </span>
                             </td>
                         </tr>
@@ -89,31 +40,30 @@
                 Current Invoice
             </div>
             <div class="utility_billing-invoice_screen">
-                <!-- TODO: здесть должно быть окошко с кнопкой для оплаты по счёту -->
                 <div class="utility_billing-payment_card top">
                     <div class="utility_billing-payment_card-inner number">
                         <span>Number</span>
-                        <span class="current_number">000244</span>
+                        <span class="current_number">{{invoice.number}}</span>
                     </div>
                     <div class="utility_billing-payment_card-inner date">
                         <span>Due Date</span>
-                        <span class="current_date">04/12/2020</span>
+                        <span class="current_date">{{invoice.dueDate}}</span>
                     </div>
                     <div class="utility_billing-payment_card-inner amount">
                         <span>Amount Due</span>
-                        <span class="current_amount">$14.92</span>
+                        <span class="current_amount">${{invoice.amountDue}}</span>
                     </div>
                 </div>
                 <div class="utility_billing-payment_card bottom">
                     <div class="utility_billing-payment_card-tax">
                         <span>Tax</span>
-                        <span class="current_tax">$1.849</span>
+                        <span class="current_tax">${{tax}}</span>
                     </div>
                     <div class="utility_billing-payment_card-total">
                         <span>Total</span>
-                        <span class="current_total">$16.07</span>
+                        <span class="current_total">${{total}}</span>
                     </div>
-                    <button type="button">Pay</button>
+                    <button type="button" @click="pay()" :style="'background-color:'+this.bgc+';'">Pay</button>
                 </div>
             </div>
         </li>
@@ -139,7 +89,6 @@
             </div>
             <div class="utility_billing-invoice_screen chart_screen">
                 <div ref="chartdiv" class="graph"></div>
-                <!-- TODO:  здесь должен быть красивый чарт с расходами-->
             </div>
         </li>
     </ul>
@@ -178,13 +127,45 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
-
+import axios from 'axios';
 
 export default {
+    data(){
+        return {
+            invoiceList:[],
+            invoice:{"number":"000000","dueDate":"mm/dd/yyyy","amountDue":"0.00"},
+            tax:"0.00",
+            total:"0.00",
+            bgc:"#a9a9a9"
+        }
+    },
+    created() {
+        axios
+            .get('data/invoice-history.json')
+            .then((resp)=>{
+                this.invoiceList = resp.data;
+        });
+    },
     mounted(){
-       this.utilityChart(); 
+       this.utilityChart();
     },
     methods:{
+        prePay(number, status){
+            if(status==="Unpaid") {
+                this.invoice = this.invoiceList.find(el=>el.number===number);
+                this.tax = (this.invoice.amountDue*0.13).toFixed(3);
+                this.total = (this.invoice.amountDue + (parseFloat(this.tax))).toFixed(2);
+                this.bgc = "#EE777F";
+            }
+        },
+        pay(){
+            let ind = this.invoiceList.findIndex(el=>el.number===this.invoice.number);
+            this.invoiceList[ind].status = 'Paid';
+            this.invoice = {"number":"000000","dueDate":"mm/dd/yyyy","amountDue":"0.00"};
+            this.tax = "0.00";
+            this.total = "0.00";
+            this.bgc = "#a9a9a9";
+        },
         utilityChart(){
             let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
 
@@ -193,66 +174,67 @@ export default {
             "value1": 50,
             "value2": 80,
             "value3": 40
-        }, 
+        },
         {
             "category": "Jan",
             "value1": 70,
             "value2": 50,
             "value3": 40
-        }, 
+        },
         {
             "category": "Feb",
             "value1": 61,
             "value2": 52,
             "value3": 22
-        }, {
+        },
+        {
             "category": "Mar",
             "value1": 73,
             "value2": 68,
             "value3": 48
-        }, 
+        },
         {
             "category": "Apr",
             "value1": 69,
             "value2": 40,
             "value3": 30
-        }, 
+        },
         {
             "category": "May",
             "value1": 70,
             "value2": 58,
             "value3": 38
-        }, 
+        },
         {
             "category": "Jun",
             "value1": 73,
             "value2": 64,
             "value3": 58
-        }, 
+        },
         {
             "category": "Jul",
             "value1": 72,
             "value2": 48,
             "value3": 35
-        }, 
+        },
         {
             "category": "Aug",
             "value1": 60,
             "value2": 48,
             "value3": 18
-        }, 
+        },
         {
             "category": "Sep",
             "value1": 50,
             "value2": 80,
             "value3": 32
-        }, 
+        },
         {
             "category": "Oct",
             "value1": 72,
             "value2": 45,
             "value3": 35
-        }, 
+        },
         {
             "category": "Nov",
             "value1": 72,
