@@ -110,6 +110,14 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+    .main_screen {
+        &-info_wrap {
+            padding: rem(36px) rem(55px) rem(31px) rem(55px);
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .container {
         padding: 0;

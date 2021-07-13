@@ -1,7 +1,7 @@
 <template>
     <div class="rooms">
         <room :info="roomInfo"></room>
-        <div class="rooms_selectors slider">
+        <div class="rooms_selectors">
             <ul class="rooms_selectors_list">
                 <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r">
                     <button type="button" @click="viewRoom(r.name)">
