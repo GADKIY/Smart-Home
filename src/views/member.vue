@@ -18,7 +18,7 @@
             </div>
             <div class="member_parameter-inner_wrap">
                 <div class="member_parameter-value">
-                    +21.3&deg;C
+                    {{this.tempr}}&deg;C
                 </div>
                 <svg width="68" height="65">
                     <use xlink:href="../assets/svg/sprite.svg#weather"></use>
@@ -151,7 +151,8 @@ export default{
             timeStamp: '',
             curWeather:[],
             sliderValue: 83,
-            sliderValue2:60
+            sliderValue2:60,
+            tempr: 0
         }
     },
     created(){
@@ -179,7 +180,10 @@ export default{
             axios
                 .get('http://api.openweathermap.org/data/2.5/weather?lat=50.45244145440475&lon=30.525787409741707&units=metric&appid=49c39dbc9b3b6308b6d9424f48b250a5')
                 .then((resp)=>{
-                    this.curWeather = resp.data;                    
+                    this.curWeather = resp.data; 
+                    this.tempr = Math.round(this.curWeather.main.temp);
+                    
+                    
                 })
         }
         // scrollX() {
