@@ -30,8 +30,8 @@
                 Members at home:
             </div>
             <div class="memb-home_wrap">
-                <ul class="memb-home_value" id="memb-home-scroll">
-                    <li class="memb-home_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
+                <ul class="memb-home_value" id="memb-home-scroll" @wheel="scrollX">
+                    <li class="memb-home_icon-wrap" v-for="mH in membersHome()" :key="mH">
                         <v-svg width="46" height="46" sprite="profile"></v-svg>
                         <div>{{mH}}</div>
                     </li>
@@ -144,10 +144,10 @@ export default{
     components:{
         RoundSlider,
     },
-    name: "member",    
+    name: "member",
     data(){
         return{
-            membersHome:[],
+            members:[],
             timeStamp: '',
             curWeather:[],
             sliderValue: 83,
@@ -159,9 +159,9 @@ export default{
         setInterval(this.getNow, 1000);
         this.weather();
         axios
-            .get('data/membersHome.json')
+            .get('data/members.json')
             .then((resp)=>{
-                this.membersHome = resp.data;
+                this.members = resp.data;
         });
     },
     methods:{
@@ -180,19 +180,23 @@ export default{
             axios
                 .get('http://api.openweathermap.org/data/2.5/weather?lat=50.45244145440475&lon=30.525787409741707&units=metric&appid=49c39dbc9b3b6308b6d9424f48b250a5')
                 .then((resp)=>{
-                    this.curWeather = resp.data; 
+                    this.curWeather = resp.data;
                     this.tempr = Math.round(this.curWeather.main.temp);
-                    
-                    
                 })
+        },
+        scrollX(e) {
+            console.log(e);
+            e.target.scrollLeft += e.deltaY;
+        },
+        membersHome() {
+            let memHome = [];
+            for(let i=0;i<this.members.length;i++) {
+                if(this.members[i].status==='At home'){
+                    memHome.push(this.members[i].name.split(' ')[0]);
+                }
+            }
+            return memHome;
         }
-        // scrollX() {
-        //     let scrollContainer = document.querySelector('#memb-home-scroll')
-        //     scrollContainer.addEventListener('wheel', (e)=> {
-        //         e.preventDefault();
-        //         scrollContainer.scrollLeft += e.deltaY;
-        //     })
-        // }
     }
 }
 </script>

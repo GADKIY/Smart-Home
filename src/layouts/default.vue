@@ -11,7 +11,7 @@
                             </router-link>
                         </div>
                         <ul class="main_screen-control-list">
-                            <li class="main_screen-control-item" v-for="ci in cBar" :key="ci">
+                            <li class="main_screen-control-item" v-for="ci in cBar" :key="ci.name">
                                 <router-link :to="'/'+ci.name">
                                     <v-svg :sprite="ci.name"></v-svg>
                                     <div>{{ci.title}}</div>
