@@ -8,33 +8,40 @@
     }
 
     &-title {
+        width: 100%;
         font-size: rem(24px);
         margin-bottom: rem(16px);
+        margin-right: rem(10px);
     }
 
     &-invoice_list {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        .history {
+            width: 67.75%;
+            max-width: rem(687px);
+        }
+
+        .current {
+            width: 28.10%;
+            .utility_billing-invoice_screen {
+                display: flex;
+                flex-direction: column;
+                align-items: space-between;
+                justify-content: space-between;
+            }
+        }
+
+        .chart {
+            width: 100%;
+        }
 
         &-item {
             margin-bottom: rem(51px);
 
             &:last-child {
                 margin-bottom: 0;
-            }
-
-            &.history {
-                width: 67.75%;
-                max-width: rem(687px);
-            }
-
-            &.current {
-                width: 28.10%;
-            }
-
-            &.chart {
-                width: 100%;
             }
         }
     }
@@ -44,10 +51,10 @@
         box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
         border-radius: rem(30px);
         width: 100%;
-        max-height: rem(291px);
 
         &.chart_screen {
             height: rem(258px);
+            display: inherit;
         }
     }
 
@@ -123,36 +130,41 @@
     }
 
     .markers_list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
         &-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: rem(10px);
+        }
+
+        .marker_circle {
             display: inline-block;
-            margin-right: rem(30px);
+            width: rem(22px);
+            height: rem(22px);
+            border-radius: 50%;
+            margin-right: rem(13px);
 
-            .marker_circle {
-                display: inline-block;
-                width: rem(22px);
-                height: rem(22px);
-                border-radius: 50%;
-                margin-right: rem(13px);
-
-                &.red {
-                    background-color: $button-color-red;
-                }
-
-                &.blue {
-                    background-color: $button-color-blue;
-                }
-
-                &.green {
-                    background-color: $button-color-green;
-                }
+            &.red {
+                background-color: $button-color-red;
             }
 
-            .marker_description {
-                font-size: rem(19px);
-                line-height: rem(22px);
-                vertical-align: top;
-                color: $font-color-grey;
+            &.blue {
+                background-color: $button-color-blue;
             }
+
+            &.green {
+                background-color: $button-color-green;
+            }
+        }
+
+        .marker_description {
+            font-size: rem(19px);
+            line-height: rem(22px);
+            vertical-align: top;
+            color: $font-color-grey;
         }
     }
 
@@ -191,6 +203,113 @@ table {
                 &.paid {
                     background-color: rgba($color: #65bdc0, $alpha: .51);
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: rem(1050px)) {
+    .utility_billing {
+        &-invoice_list {
+            .history {
+                    width: 100%;
+                    max-width: inherit;
+            }
+            .current {
+                max-width: rem(500px);
+                    width: 100%;
+                    .utility_billing-invoice_screen {
+                        flex-direction: row;
+                    }
+            }
+        }
+
+        &-payment_card {
+        padding: rem(10px) rem(15px);
+
+            &.top {
+                width: 60%;
+                border-bottom: none;
+                border-right: rem(1px) solid rgba($color: #000000, $alpha: .14);
+                padding-bottom: rem(10px);
+            }
+
+            &.bottom {
+                width: 40%;
+                padding-top: rem(10px);
+            }
+
+            &-inner {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: rem(19px);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-tax,
+            &-total {
+                width: 100%;
+                // text-align: inherit;
+                margin-bottom: rem(10px);
+            }
+
+            &-total {
+                margin-bottom: rem(15px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: rem(600px)) {
+    .utility_billing {
+        .markers_list {
+            .marker_circle {
+                width: rem(18px);
+                height: rem(18px);
+                margin-right: rem(8px);
+            }
+            .marker_description {
+                font-size: rem(16px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: rem(500px)) {
+    .utility_billing {
+        &-invoice_list {
+            .current {
+                    .utility_billing-invoice_screen {
+                        flex-direction: column;
+                    }
+            }
+        }
+        &-payment_card {
+            padding: rem(25px) rem(19px) rem(25px) rem(25px);
+            &.top {
+                width: 100%;
+                border-bottom: rem(1px) solid rgba($color: #000000, $alpha: .14);
+                border-right: none;
+                padding-bottom: 0;
+            }
+            &.bottom {
+                width: 100%;
+                padding-top: rem(19px);
+            }
+            &-inner {
+                margin-bottom: rem(19px);
+                &:last-child {
+                    margin-bottom: rem(19px);
+                }
+            }
+            &-tax,
+            &-total {
+                text-align: end;
+            }
+            &-total {
+                margin-bottom: rem(25px);
             }
         }
     }
