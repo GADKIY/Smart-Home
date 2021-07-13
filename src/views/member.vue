@@ -29,12 +29,14 @@
             <div class="member_parameter-name">
                 Members at home:
             </div>
-            <ul class="memb-home-value" id="memb-home-scroll">
-                <li class="member_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
-                    <v-svg width="46" height="46" sprite="profile"></v-svg>
-                    <div>{{mH}}</div>
-                </li>
-            </ul>
+            <div class="memb-home_wrap">
+                <ul class="memb-home_value" id="memb-home-scroll">
+                    <li class="memb-home_icon-wrap" v-for="mH in membersHome[0].name" :key="mH">
+                        <v-svg width="46" height="46" sprite="profile"></v-svg>
+                        <div>{{mH}}</div>
+                    </li>
+                </ul>
+            </div>
         </li>
     </ul>
     <div class="member_controls-title">

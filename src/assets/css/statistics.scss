@@ -4,7 +4,7 @@
     width: 100%;
 
     &_title {
-        margin-bottom: 29px;
+        margin-bottom: rem(29px);
     }
 
     &_list {
@@ -32,36 +32,35 @@
 
         &-item_title {
             font-size: rem(24px);
-            margin-bottom: 18px;
+            margin-bottom: rem(18px);
             color: $font-color-black;
         }
     }
 
     &_graph {
         //это само поле графика
-        height: calc(100% - 47px);
+        height: calc(100% - 2.9375rem);
         width: 100%;
-        // max-width: 492px;
-        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
-        border-radius: 30px;
+        box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+        border-radius: rem(30px);
         background-color: $font-color-white;
     }
 
     &_circle-container {
-        padding: 12px;
+        padding: rem(12px);
     }
 
     &_sorting-diagramma {
-        width: 117px;
-        height: 117px;
-        margin: 0 auto 13px;
-        border: 2px solid $font-color-black;
+        width: rem(117px);
+        height: rem(117px);
+        margin: 0 auto rem(13px);
+        border: rem(2px) solid $font-color-black;
         border-radius: 50%;
     }
 
     &_sorting-materials {
         &-item {
-            margin-bottom: 11px;
+            margin-bottom: rem(11px);
             margin-left: 50%;
             transform: translateX(-50%);
 
@@ -71,11 +70,11 @@
 
             .material-color {
                 display: inline-block;
-                width: 17px;
-                height: 17px;
+                width: rem(17px);
+                height: rem(17px);
                 background-color: #65BDC0;
                 border-radius: 50%;
-                margin-right: 13px;
+                margin-right: rem(13px);
             }
 
             .mateial-name {
@@ -87,8 +86,8 @@
 
     &_circle-graph {
         //контейнер с круговой диаграммой
-        max-width: 211px;
-        margin-right: 30px;
+        max-width: rem(211px);
+        margin-right: rem(30px);
         height: 100%;
         width: 100%;
 
@@ -102,16 +101,15 @@
         //контейнер с кнопками
         position: relative;
         height: 100%;
-        // max-width: 251px;
         &::before {
             content: '';
             position: absolute;
             display: block;
-            height: 25px;
+            height: rem(25px);
             width: 100%;
-            top: 47px;
+            top: rem(47px);
             left: 0;
-            border-radius: 30px 30px 0 0;
+            border-radius: rem(30px) rem(30px) 0 0;
             background: rgb(255,245,245);
             background: -moz-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
             background: -webkit-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
@@ -122,33 +120,32 @@
             content: '';
             position: absolute;
             display: block;
-            height: 25px;
+            height: rem(25px);
             width: 100%;
             bottom: 0;
             left: 0;
-            border-radius: 0 0 30px 30px;
+            border-radius: 0 0 rem(30px) rem(30px);
             background: rgb(255,245,245);
             background: -moz-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
             background: -webkit-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
             background: linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
-
     }
     &_controls {
         height: 100%;
-        max-height: 258px;
+        max-height: rem(258px);
         overflow-y: scroll;
         &::-webkit-scrollbar {
             display: none;
         }
     }
     &_devices {
-        padding: 26px 10px 28px;
+        padding: rem(26px) rem(10px) rem(28px);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        row-gap: 17px;
-        column-gap: 9px;
+        row-gap: rem(17px);
+        column-gap: rem(9px);
         justify-content: center;
         align-items: center;
         color: $font-color-white;
@@ -203,17 +200,17 @@
         }
 
         &-btn {
-            width: 71px;
-            height: 71px;
-            border-radius: 18px;
+            width: rem(71px);
+            height: rem(71px);
+            border-radius: rem(18px);
             border: none;
             outline: none;
-            margin-bottom: 4px;
+            margin-bottom: rem(4px);
         }
     }
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: rem(1240px)) {
     .statistics {
         &_list {
             grid-template-columns: repeat(7, 1fr);
@@ -233,7 +230,7 @@
     }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: rem(1050px)) {
     .statistics {
         &_list {
             grid-template-columns: repeat(5, 1fr);
@@ -250,7 +247,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: rem(900px)) {
     .statistics {
         &_devices {
             grid-template-columns: repeat(3, 1fr);
@@ -258,7 +255,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: rem(550px)) {
     .statistics {
         &_list {
             grid-template-columns: repeat(2, 1fr);
@@ -279,7 +276,7 @@
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: rem(425px)) {
     .statistics {
         &_list {
             grid-template-columns: repeat(1, 1fr);
