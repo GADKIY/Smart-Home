@@ -3,7 +3,7 @@
         <h2 class="members_title">Members</h2>
         <div class="members_cards-list_wrap">
             <ul class="members_cards-list">
-                <li class="members_card" v-for="m in members" :key="m">
+                <li class="members_card" v-for="m in members" :key="m.id">
                     <div class="members_card-inner--upper">
                         <div class="members_card-avatar">
                             <v-svg :sprite="m.avatar"></v-svg>

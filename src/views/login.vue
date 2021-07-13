@@ -70,10 +70,11 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default {
     data(){
         return{
-            name: 'admin',
+            name: '',
             pass: ''
         }
     },
@@ -81,14 +82,20 @@ export default {
         login(e){
             e.preventDefault();
             if(this.name!='' && this.pass!=''){
-                if(this.name === 'admin' && this.pass === "admin"){
-                    localStorage.setItem('user', JSON.stringify({"name":this.name, "pass": this.pass}));
-                    this.$router.push('/');
-                }else{
-                    alert("NO NO NO");
-                }
-            }else{
-                alert("NO NO");
+                let user = {};
+                axios
+                    .get('data/members.json')
+                    .then((resp)=>{
+                        user = resp.data.find((el)=>{
+                            return el.username===this.name&&el.password===this.pass;
+                        })
+                        if(typeof (user) !== 'undefined') {
+                            localStorage.setItem('user', JSON.stringify(user));
+                            this.$router.push('/');
+                        } else {
+                            alert('username or pass invalid');
+                        }
+                    });
             }
         }
     },

@@ -277,17 +277,16 @@
     }
     &_wrap {
         max-height: rem(105px);
-        overflow-x: scroll;
+        overflow-y: scroll;
         &::-webkit-scrollbar {
             display: none;
         }
     }
     &_value {
         padding: rem(6px) 0 rem(20px);
-        display: flex;
-        // display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(rem(80px), 1fr));
-        // gap: rem(10px);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(80px), 1fr));
+        gap: rem(10px);
     }
     &_icon-wrap {
         display: flex;

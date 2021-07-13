@@ -4,20 +4,29 @@
         "position":"Owner",
         "status":"At home",
         "location":"Bedroom",
-        "avatar":"avatar"
+        "avatar":"avatar",
+        "id":"1",
+        "username":"annie",
+        "password":"1234"
     },
     {
         "name":"John Gulberg",
         "position":"Owner 2",
         "status":"At home",
         "location":"Bedroom",
-        "avatar":"avatar"
+        "avatar":"avatar",
+        "id":"2",
+        "username":"john",
+        "password":"0987"
     },
     {
         "name":"Marie Gulberg",
         "position":"Owner 3",
         "status":"Out",
         "location":"",
-        "avatar":"avatar"
+        "avatar":"avatar",
+        "id":"3",
+        "username":"marie",
+        "password":"qwer"
     }
 ]

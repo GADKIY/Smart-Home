@@ -1,7 +1,7 @@
 <template>
     <div class="member">
     <div class="member_welcome-title">
-        Welcome, Annie!
+        Welcome, {{user.name}}
     </div>
     <ul class="member_main-parameters">
         <li class="member_parameter time">
@@ -30,10 +30,10 @@
                 Members at home:
             </div>
             <div class="memb-home_wrap">
-                <ul class="memb-home_value" id="memb-home-scroll" @wheel="scrollX">
-                    <li class="memb-home_icon-wrap" v-for="mH in membersHome()" :key="mH">
+                <ul class="memb-home_value">
+                    <li class="memb-home_icon-wrap" v-for="mH in membersHome()" :key="mH.id">
                         <v-svg width="46" height="46" sprite="profile"></v-svg>
-                        <div>{{mH}}</div>
+                        <div>{{mH.name}}</div>
                     </li>
                 </ul>
             </div>
@@ -147,6 +147,7 @@ export default{
     name: "member",
     data(){
         return{
+            user: JSON.parse(localStorage.getItem('user')),
             members:[],
             timeStamp: '',
             curWeather:[],
@@ -184,15 +185,11 @@ export default{
                     this.tempr = Math.round(this.curWeather.main.temp);
                 })
         },
-        scrollX(e) {
-            console.log(e);
-            e.target.scrollLeft += e.deltaY;
-        },
         membersHome() {
             let memHome = [];
             for(let i=0;i<this.members.length;i++) {
                 if(this.members[i].status==='At home'){
-                    memHome.push(this.members[i].name.split(' ')[0]);
+                    memHome.push({id:this.members[i].id, name:this.members[i].name.split(' ')[0]});
                 }
             }
             return memHome;
