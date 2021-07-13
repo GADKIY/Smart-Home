@@ -22,8 +22,8 @@
 
         &-item {
             box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
-            border-radius: 30px;
-            padding: 13px 20px 15px 13px;
+            border-radius: rem(30px);
+            padding: rem(13px) rem(20px) rem(15px) rem(13px);
             display: flex;
             justify-content: space-between;
             width: 28.81%;
@@ -53,17 +53,17 @@
         }
     }
     &_status-fahrenheit {
-        margin-left: 26px;
+        margin-left: rem(26px);
         span {
             font-size: rem(22px);
         }
     }
 
     &_parameter-scale {
-        min-width: 45px;
-        width: 76px;
-        height: 176px;
-        border-radius: 25px;
+        min-width: rem(45px);
+        width: rem(76px);
+        height: rem(176px);
+        border-radius: rem(25px);
         position: relative;
         color: $font-color-black;
         &.temperature {
@@ -85,7 +85,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            border-radius: 0 0 25px 25px;
+            border-radius: 0 0 rem(25px) rem(25px);
 
             &.temperature {
                 background-color: $button-color-red;
@@ -114,10 +114,10 @@
             content: '';
             position: absolute;
             display: block;
-            height: 25px;
+            height: rem(25px);
             width: 101%;
-            top: 27px;
-            left: -3px;
+            top: rem(27px);
+            left: rem(-3px);
             background: rgb(255,255,255);
             background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
             background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
@@ -128,10 +128,10 @@
             content: '';
             position: absolute;
             display: block;
-            height: 25px;
+            height: rem(25px);
             width: 101%;
             bottom: 0;
-            left: -3px;
+            left: rem(-3px);
             background: rgb(255,255,255);
             background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
             background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
@@ -144,14 +144,14 @@
             color: rgba($color: $font-color-black, $alpha: .75);
         }
         &-wrap {
-            max-height: 360px;
+            max-height: rem(360px);
             overflow-y: scroll;
             &::-webkit-scrollbar {
                 display: none;
             }
         }
         &-list {
-            padding: 20px 0 30px;
+            padding: rem(20px) 0 rem(30px);
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             column-gap: rem(36px);
@@ -169,7 +169,7 @@
                 transition: all .2s;
 
                 svg {
-                    margin-bottom: 13px;
+                    margin-bottom: rem(13px);
                 }
 
                 div {
@@ -210,33 +210,33 @@
             grid-template-columns: repeat(1, 1fr);
             justify-content: center;
             align-items: center;
-            gap: 29px;
+            gap: rem(29px);
             &-item {
                 &:nth-child(3)svg{
-                    margin-top: 10px;
-                    margin-bottom: 24px;
+                    margin-top: rem(10px);
+                    margin-bottom: rem(24px);
                 }
                 button {
                     width: 100%;
-                    height: 153px;
+                    height: rem(153px);
                     text-align: center;
                     background: #FFFFFF;
-                    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.18);
-                    border-radius: 30px;
+                    box-shadow: 0 rem(4px) rem(36px) rgba(0, 0, 0, 0.18);
+                    border-radius: rem(30px);
                     transition: all .2s;
                     color: #c1c1c1;
                     border: none;
                     cursor: pointer;
                     svg {
-                        margin-bottom: 18px;
+                        margin-bottom: rem(18px);
                     }
                     div {
-                        font-size: 19px;
+                        font-size: rem(19px);
                     }
                     &:hover,
                     &:active,
                     &:focus {
-                        box-shadow: 0px 4px 15px rgba(238, 119, 127, 0.31);
+                        box-shadow: 0 rem(4px) rem(15px) rgba(238, 119, 127, 0.31);
                             color: rgba(238, 119, 127, 0.31);
                     }
                 }
@@ -245,7 +245,7 @@
     }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: rem(1199px)) {
     .rooms {
         &_devices {
             &-list {
@@ -255,7 +255,7 @@
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: rem(1100px)) {
     .rooms {
         &_status-value {
             font-size: rem(30px);
@@ -289,16 +289,16 @@
     }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: rem(870px)) {
     .rooms {
         &_selectors {
             &_list {
-                gap: 15px;
+                gap: rem(15px);
                 &-item {
                     button {
-                        height: 125px;
+                        height: rem(125px);
                         div {
-                            font-size: 16px;
+                            font-size: rem(16px);
                         }
                     }
                 }
@@ -307,15 +307,15 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: rem(767px)) {
     .rooms {
         &_selectors {
             &_list {
                 &-item {
                     button {
-                        height: 140px;
+                        height: rem(140px);
                         div {
-                            font-size: 18px;
+                            font-size: rem(18px);
                         }
                     }
                 }
@@ -331,13 +331,13 @@
                 overflow: inherit;
             }
             &-list {
-                padding: 20px 0 0;
+                padding: rem(20px) 0 0;
             }
         }
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: rem(650px)) {
     .rooms {
         &_selectors {
             &_list {
@@ -348,9 +348,9 @@
             flex-direction: column;
             &-item {
                 justify-content: space-evenly;
-                max-width: 450px;
+                max-width: rem(450px);
                 width: 100%;
-                margin: 0 auto 20px;
+                margin: 0 auto rem(20px);
                 &.biger {
                     width: 100%;
                 }
