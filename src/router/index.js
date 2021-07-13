@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css';
+
 
 Vue.use(VueRouter)
 
@@ -57,6 +60,16 @@ const routes = [
 const router = new VueRouter({
   routes
 });
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
+})
+router.afterEach(() => {
+  NProgress.done()
+})
 
 router.beforeEach((to, form, next)=>{
   if(to.path !== "/login"){
