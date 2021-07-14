@@ -252,6 +252,64 @@
     opacity: 0;
 }
 
+.modal-btn_block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.modal-btn_wrapper {
+    position: relative;
+    margin-right: rem(10px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:nth-child(1)input:checked + label {
+        color: #fff;
+        background-color: darken($color: $button-color-green, $amount: 10);
+    }
+
+    &:nth-child(1) label:hover,
+    &:nth-child(1) label:active,
+    &:nth-child(1) label:focus {
+        background-color: $button-color-green;
+    }
+
+    &:nth-child(2)input:checked + label {
+        color: #fff;
+        background-color: darken($color: $button-color-red, $amount: 10);
+    }
+
+    &:nth-child(2) label:hover,
+    &:nth-child(2) label:active,
+    &:nth-child(2) label:focus {
+        background-color: $button-color-red;
+    }
+
+    input {
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    label {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(50px);
+        height: rem(50px);
+        background-color: #A9A9A9;
+        border-radius: rem(15px);
+        font-size: rem(20px);
+        color: rgba($color: #fff, $alpha: .9);
+    }
+}
+
 @media screen and (max-width: rem(1199px)) {
     .rooms {
         &_devices {

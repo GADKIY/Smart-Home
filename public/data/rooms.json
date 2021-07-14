@@ -34,6 +34,9 @@
                     "name":"buttonAc",
                     "width": "45",
                     "height": "41"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -42,6 +45,9 @@
                     "name":"buttonTV",
                     "width": "35",
                     "height": "31"
+                },
+                "controls": {
+                    "state":"off"
                 }
             }
         ]
@@ -81,6 +87,9 @@
                     "name":"buttonFridge",
                     "width": "31",
                     "height": "36"
+                },
+                "controls": {
+                    "state":"on"
                 }
             },
             {
@@ -89,6 +98,9 @@
                     "name":"buttonKettle",
                     "width": "33",
                     "height": "34"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -97,6 +109,9 @@
                     "name":"buttonStove",
                     "width": "34",
                     "height": "35"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -105,6 +120,9 @@
                     "name":"buttonDishwasher",
                     "width": "32",
                     "height": "40"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -113,6 +131,9 @@
                     "name":"buttonMulticooker",
                     "width": "40",
                     "height": "40"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -121,6 +142,9 @@
                     "name":"buttonTV",
                     "width": "35",
                     "height": "31"
+                },
+                "controls": {
+                    "state":"on"
                 }
             },
             {
@@ -129,6 +153,9 @@
                     "name":"buttonMicrowave",
                     "width": "40",
                     "height": "30"
+                },
+                "controls": {
+                    "state":"on"
                 }
             },
             {
@@ -137,6 +164,9 @@
                     "name":"buttonGrill",
                     "width": "32",
                     "height": "44"
+                },
+                "controls": {
+                    "state":"off"
                 }
             }
         ]
@@ -176,6 +206,9 @@
                     "name":"buttonAc",
                     "width": "45",
                     "height": "41"
+                },
+                "controls": {
+                    "state":"on"
                 }
             },
             {
@@ -184,6 +217,9 @@
                     "name":"buttonTV",
                     "width": "35",
                     "height": "31"
+                },
+                "controls": {
+                    "state":"off"
                 }
             }
         ]
@@ -223,6 +259,9 @@
                     "name":"buttonWashbasin",
                     "width": "36",
                     "height": "45"
+                },
+                "controls": {
+                    "state":"off"
                 }
             },
             {
@@ -231,6 +270,9 @@
                     "name":"buttonBath",
                     "width": "42",
                     "height": "45"
+                },
+                "controls": {
+                    "state":"off"
                 }
             }
         ]

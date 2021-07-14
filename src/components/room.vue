@@ -53,7 +53,7 @@
             <div class="rooms_devices-wrap">
                 <ul class="rooms_devices-list">
                     <transition name="fade" v-for="rd in info.devices" :key="rd.name">
-                        <li class="rooms_devices-list-item" @click="showModal = true">
+                        <li class="rooms_devices-list-item" @click="showModal = true, viewDevice(rd.name)">
                             <v-svg :width="rd.icon.width" :height="rd.icon.height" :viewBox="'0 0 ' + rd.icon.width + ' ' + rd.icon.height" :sprite="rd.icon.name"></v-svg>
                             <div>{{rd.name}}</div>
                         </li>
@@ -63,7 +63,19 @@
         </div>
         <modal v-if="showModal" @close="showModal = false" :class="showModal?'opened':''">
             <div slot="header">
-                Custom header
+                {{deviceInfo.name}}
+            </div>
+            <div slot="body">
+                <div class="modal-btn_block">
+                    <div class="modal-btn_wrapper">
+                        <input type="radio" name="on-off-btn" id="btn-on" :checked="stateOnCheck(deviceInfo.controls.state)">
+                        <label for="btn-on">On</label>
+                    </div>
+                    <div class="modal-btn_wrapper">
+                        <input type="radio" name="on-off-btn" id="btn-off" :checked="stateOffCheck(deviceInfo.controls.state)">
+                        <label for="btn-off">Off</label>
+                    </div>
+                </div>
             </div>
         </modal>
     </div>
@@ -85,8 +97,20 @@ export default {
    },
    data(){
        return{
-        showModal: false
+        showModal: false,
+        deviceInfo:{}
        }
+   },
+   methods: {
+       viewDevice(curDevice) {
+          this.deviceInfo = this.info.devices.find(el=>el.name===curDevice);
+      },
+      stateOnCheck(state) {
+          return state = state==="on"?true:false;
+      },
+      stateOffCheck(state) {
+          return state = state==="on"?false:true;
+      }
    }
 }
 </script>

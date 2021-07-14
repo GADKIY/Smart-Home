@@ -7,7 +7,7 @@
             <slot name="header">
               default header
             </slot>
-            <button class="modal-default-button btn btn-danger btn-rounded" @click="$emit('close')">&times;</button>
+            <!-- <button class="modal-default-button btn btn-danger btn-rounded" @click="$emit('close')">&times;</button> -->
           </div>
 
           <div class="modal-body">
@@ -18,9 +18,8 @@
 
           <div class="modal_footer">
             <slot name="footer">
-              default footer
               <button class="modal-default-button" @click="$emit('close')">
-                OK
+                Close
               </button>
             </slot>
           </div>
