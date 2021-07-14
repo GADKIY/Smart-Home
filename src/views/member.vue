@@ -99,16 +99,6 @@
             <div class="member_controls-name">
                 Temperature
             </div>
-            <!-- <div class="member_controls-vertical_controler">
-                <svg width="22" height="40">
-                    <use xlink:href="../assets/svg/sprite.svg#temperature"></use>
-                </svg>
-                <div class="member_controls-fill">
-                    <div class="member_controls-temperature">
-                        +23<span>&deg;C</span>
-                    </div>
-                </div>
-            </div> -->
             <label for="range">
                 <input type="range" name="range" id="range" min="15" max="50" step="1" v-model="value" >
             </label>
@@ -163,7 +153,7 @@ export default{
             sliderValue: 83,
             sliderValue2:60,
             tempr: 0,
-            value: 23
+            value: 32
         }
     },
     created(){
