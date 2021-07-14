@@ -104,8 +104,15 @@
             text-align: center;
             box-shadow: 0 rem(4px) rem(36px) rgba(0, 0, 0, 0.18);
             border-radius: rem(30px);
-
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: rem(15px) 0 rem(10px);
+            svg{
+                position: absolute;
+                top: 35%;
+            }
         }
 
         &.shortcuts {
@@ -114,6 +121,64 @@
             text-align: center;
         }
 
+    }
+
+    label[for=range] {
+        position: relative;
+        display: block;
+        transform-origin: center;
+        padding-top: 40.47%;
+        margin: auto 0;
+        height: auto;
+        width: 239px;
+        padding-left: 13px;
+        transform: rotate(-90deg)
+            /* skew(-62deg) */
+        ;
+        overflow: hidden;
+        box-shadow: 0 rem(-6px) rem(60px) rgba(29, 35, 67, 0.14);
+        border-radius: rem(25px);
+
+    }
+
+    input[type=range] {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        -webkit-appearance: none;
+        background-color: transparent;
+        width: 300px;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        margin-left: -20px;
+
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        position: relative;
+        -webkit-appearance: none;
+        cursor: pointer;
+        background-color: #EE777F;
+        width: 30px;
+        height: 100%;
+        box-shadow:
+            -25px 0 0 10px #EE777F,
+            -75px 0 0 10px #EE777F,
+            -125px 0 0 10px #EE777F,
+            -175px 0 0 10px #EE777F,
+            -225px 0 0 10px #EE777F,
+            -275px 0 0 10px #EE777F,
+            -325px 0 0 10px #EE777F;
+        z-index: 2;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: 100%;
     }
 
     &_controls {
@@ -144,9 +209,7 @@
 
         &-vertical_controler {
             width: rem(85px);
-            height: rem(239px);
-           
-            
+            height: rem(239px);                       
             margin: 0 auto;
             position: relative;
             padding-top: rem(30px);
@@ -164,7 +227,7 @@
 
         &-temperature {
             position: absolute;
-            top: 50%;
+            top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: $font-color-white;
