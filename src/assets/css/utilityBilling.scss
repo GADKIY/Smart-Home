@@ -250,7 +250,7 @@ table {
                 border-radius: rem(16px);
                 display: inline-block;
                 line-height: rem(24px);
-
+                transition: all .2s ease;
                 &.Unpaid {
                     cursor: pointer;
                     background-color: rgba($color: #ee777f, $alpha: .46);
