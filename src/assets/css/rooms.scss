@@ -245,6 +245,13 @@
     }
 }
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 @media screen and (max-width: rem(1199px)) {
     .rooms {
         &_devices {
