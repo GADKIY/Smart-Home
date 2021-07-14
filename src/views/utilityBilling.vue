@@ -18,20 +18,22 @@
                             <th scope="col">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr v-for="info in invoiceList" :key="info.number">
-                            <td>{{info.number}}</td>
-                            <td>{{info.category}}</td>
-                            <td>{{info.month}}</td>
-                            <td>{{info.dueDate}}</td>
-                            <td>${{info.amountDue}}</td>
-                            <td class="status">
-                                <span :class="info.status" @click="prePay(info.number, info.status)">
-                                    {{info.status}}
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <span class="table_wrap">
+                        <tbody>
+                            <tr v-for="info in invoiceList" :key="info.number">
+                                <td>{{info.number}}</td>
+                                <td>{{info.category}}</td>
+                                <td>{{info.month}}</td>
+                                <td>{{info.dueDate}}</td>
+                                <td>${{info.amountDue}}</td>
+                                <td class="status">
+                                    <span :class="info.status" @click="prePay(info.number, info.status)">
+                                        {{info.status}}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </span>
                 </table>
             </div>
         </li>

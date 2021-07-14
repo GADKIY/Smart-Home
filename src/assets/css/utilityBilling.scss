@@ -171,18 +171,73 @@
 }
 
 table {
+    position: relative;
+    display: block;
     width: 100%;
     border-radius: rem(30px);
     text-align: center;
     padding: 0 rem(41px) 0 rem(33px);
     border-collapse: collapse;
-
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: rem(20px);
+        width: 100%;
+        top: rem(30px);
+        left: 0;
+        background: rgb(255,245,245);
+        background: -moz-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
+        background: linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: rem(35px);
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 0 rem(30px) rem(30px);
+        background: rgb(255,245,245);
+        background: -moz-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
+        background: linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
+    }
+    thead {
+        display: block;
+        width: 100%;
+    }
     th {
         color: rgba($color: $font-color-black, $alpha: .47);
         font-size: rem(13px);
         padding: rem(14px) 0 rem(14px);
     }
-
+    .table_wrap {
+        margin-top: rem(-8px);
+        display: block;
+        width: 100%;
+        max-height: rem(256px);
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    tbody {
+        padding: rem(10px) 0 rem(6px);
+        display: block;
+        width: 100%;
+    }
+    tr {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
     td {
         font-size: rem(13px);
         line-height: rem(28px);
@@ -255,7 +310,6 @@ table {
             &-tax,
             &-total {
                 width: 100%;
-                // text-align: inherit;
                 margin-bottom: rem(10px);
             }
 
@@ -265,8 +319,23 @@ table {
         }
     }
 }
+@media screen and (max-width: rem(803px)) {
+    table {
+        th {
+            font-size: rem(12px);
+        }
+    }
+}
 
-@media screen and (max-width: rem(600px)) {
+@media screen and (max-width: rem(767px)) {
+    table {
+        th {
+            font-size: rem(13px);
+        }
+    }
+}
+
+@media screen and (max-width: rem(605px)) {
     .utility_billing {
         .markers_list {
             .marker_circle {
@@ -277,6 +346,37 @@ table {
             .marker_description {
                 font-size: rem(16px);
             }
+        }
+    }
+    table {
+        padding: 0 rem(13px);
+        &::before {
+            top: rem(48px);
+        }
+        .table_wrap {
+            margin-top: 0;
+        }
+        th {
+            padding: rem(5px) 0;
+            width: 33%;
+        }
+        tbody {
+            padding: rem(15px) 0 rem(25px);
+            tr {
+                &:nth-child(2n+1) {
+                    background-color: rgba($color: darken($font-color-white, 2%), $alpha: 1)
+                }
+            }
+        }
+        td {
+            width: 33%;
+            padding-bottom: rem(5px);
+        }
+        tr {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
     }
 }
