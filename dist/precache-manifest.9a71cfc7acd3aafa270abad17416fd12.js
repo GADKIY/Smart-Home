@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "62f94a3639ba4f2e2f59",
-    "url": "css/app.f6a9bc3a.css"
+    "revision": "a302dbd0c64467460e58",
+    "url": "css/app.09c418ac.css"
   },
   {
     "revision": "85bd287eee7b7fcd3087",
@@ -16,20 +16,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/layout-components-room-vue.a2ef6f22.css"
   },
   {
-    "revision": "d6531cfc2e46ce01e5a6",
-    "url": "css/layout-layouts-auth-vue.6925cab4.css"
+    "revision": "73dab7914c63ec846ab8",
+    "url": "css/layout-layouts-auth-vue.3805db56.css"
   },
   {
-    "revision": "c040178864f36b56393f",
-    "url": "css/layout-layouts-default-vue.db0b9f38.css"
+    "revision": "4db86eb03eecd60742da",
+    "url": "css/layout-layouts-default-vue.7386cdea.css"
   },
   {
-    "revision": "987d8d0e2b04e000c3a1",
-    "url": "css/layout-views-login-vue.ff4ab211.css"
+    "revision": "608c1ebc4daf1ff331e0",
+    "url": "css/layout-views-login-vue.04fa0319.css"
   },
   {
-    "revision": "17f545a4bbdfd09466d7",
-    "url": "css/layout-views-member-vue.ef394e10.css"
+    "revision": "ad3a2a2e61fec2b0aad8",
+    "url": "css/layout-views-member-vue.fc65f258.css"
   },
   {
     "revision": "7a26c481a54c3795a8b7",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/layout-views-rooms-vue.f0f2c677.css"
   },
   {
-    "revision": "19fce6664a19281ad2d1",
-    "url": "css/layout-views-statistics-vue.41e25c67.css"
+    "revision": "332a6d23e501a5965d80",
+    "url": "css/layout-views-statistics-vue.fdc00816.css"
   },
   {
     "revision": "5b21fed14fa5b47f6460",
@@ -152,12 +152,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/sprite.d1c1c928.svg"
   },
   {
-    "revision": "91fd5734da15be1af74d0d152af9dddb",
+    "revision": "12320eb0cb17c43c67bd8e32fb9fec64",
     "url": "index.html"
   },
   {
-    "revision": "62f94a3639ba4f2e2f59",
-    "url": "js/app.b7220674.js"
+    "revision": "a302dbd0c64467460e58",
+    "url": "js/app.e40cfc75.js"
   },
   {
     "revision": "ea95050ebf423ada01a8",
@@ -176,11 +176,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/layout-components-room-vue.d4fd773a.js"
   },
   {
-    "revision": "d6531cfc2e46ce01e5a6",
-    "url": "js/layout-layouts-auth-vue.7ec3ed88.js"
+    "revision": "73dab7914c63ec846ab8",
+    "url": "js/layout-layouts-auth-vue.c47a9229.js"
   },
   {
-    "revision": "c040178864f36b56393f",
+    "revision": "4db86eb03eecd60742da",
     "url": "js/layout-layouts-default-vue.5e4332dc.js"
   },
   {
@@ -188,11 +188,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/layout-layouts-default-vue~layout-views-login-vue~layout-views-member-vue~layout-views-members-vue~l~5c914e80.a211d5c9.js"
   },
   {
-    "revision": "987d8d0e2b04e000c3a1",
+    "revision": "608c1ebc4daf1ff331e0",
     "url": "js/layout-views-login-vue.c6f558f2.js"
   },
   {
-    "revision": "17f545a4bbdfd09466d7",
+    "revision": "ad3a2a2e61fec2b0aad8",
     "url": "js/layout-views-member-vue.595e3728.js"
   },
   {
@@ -204,7 +204,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/layout-views-rooms-vue.8b219228.js"
   },
   {
-    "revision": "19fce6664a19281ad2d1",
+    "revision": "332a6d23e501a5965d80",
     "url": "js/layout-views-statistics-vue.f30b782f.js"
   },
   {
@@ -226,10 +226,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "56f2cd7635deb6df964af770520c0cc5",
     "url": "manifest.json"
-  },
-  {
-    "revision": "fa775902f50e89b7c2be41102f5870fa",
-    "url": "manifest.webmanifest"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
