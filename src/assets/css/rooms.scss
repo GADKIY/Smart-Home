@@ -425,11 +425,6 @@
                 font-size: rem(18px);
             }
         }
-        &_selectors {
-            &_wrap {
-                max-height: rem(235px);
-            }
-        }
     }
 }
 
@@ -445,6 +440,9 @@
         &_selectors {
             width: 100%;
             margin-bottom: rem(20px);
+            &_wrap {
+                max-height: rem(235px);
+            }
             &_list {
                 grid-template-columns: repeat(4, 1fr);
             }
