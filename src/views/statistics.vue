@@ -34,8 +34,8 @@
                 <h6 class="statistics_list-item_title">Devices</h6>
                 <div class="statistics_graph statistics_controls">
                     <ul class="statistics_devices">
-                        <li class="statistics_devices-device-wrap" v-for="d in devices" :key="d">
-                            <button type="button" class="statistics_devices-btn" @click="showModal = true">
+                        <li class="statistics_devices-device-wrap" v-for="d in devices" :key="d.name">
+                            <button type="button" class="statistics_devices-btn" @click="showModal = true, viewDevice(d.name)">
                                 <v-svg :width="d.icon.width" :height="d.icon.height" :viewBox="'0 0 '+ d.icon.width + ' '+ d.icon.height" :sprite="d.icon.name"></v-svg>
                             </button>
                             <div>{{d.name}}</div>
@@ -47,7 +47,9 @@
     </ul>
     <modal v-if="showModal" @close="showModal = false" :class="showModal?'opened':''">
         <div slot="header">
-            Custom header
+            {{deviceInfo.name}}
+        </div>
+        <div slot="body">
         </div>
     </modal>
 </div>
@@ -70,6 +72,7 @@ export default{
     data(){
         return{
             devices:[],
+            deviceInfo:{},
             showModal: false
         }
     },
@@ -90,6 +93,9 @@ export default{
         this.graph4();
     },
     methods:{
+        viewDevice(curDevice) {
+          this.deviceInfo = this.devices.find(el=>el.name===curDevice);
+        },
         graph1(){
             let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
 
@@ -291,6 +297,62 @@ export default{
             marker.cornerRadius(12, 12, 12, 12);
             marker.strokeWidth = 2;
             marker.strokeOpacity = 1;
+        },
+        graphModal(){
+            let chart = am4core.create(this.$refs.chartdiv_modal, am4charts.XYChart);
+
+            chart.data = [
+                {
+                    "category": "Dec",
+                    "value": 57
+                },
+                {
+                    "category": "Mar",
+                    "value": 58
+                },
+                {
+                    "category": "May",
+                    "value": 43
+                },
+                {
+                    "category": "Jul",
+                    "value": 40
+                },
+                {
+                    "category": "Sep",
+                    "value": 40
+                },
+                {
+                    "category": "Nov",
+                    "value": 78
+                },
+            ];
+
+            let xAxes1 = chart.xAxes.push(new am4charts.CategoryAxis());
+            xAxes1.dataFields.category = "category";
+
+            xAxes1.renderer.grid.template.location = 0;
+
+            xAxes1.renderer.minGridDistance = 20;
+
+            let yAxes1 = chart.yAxes.push(new am4charts.ValueAxis());
+            yAxes1.renderer.maxLabelPosition = 1;
+
+            let series1 = chart.series.push(new am4charts.LineSeries());
+
+            let series1Bullets1 = series1.bullets.push(new am4charts.CircleBullet());
+            series1Bullets1.tooltipText = "{categoryX} {valueY}";
+
+            series1.dataFields.valueY = "value";
+            series1.dataFields.categoryX = "category";
+            series1.strokeWidth = 2;
+            series1.tensionX = 0.7;
+            series1.tensionY = 0.8;
+
+            series1.stroke = am4core.color("#EE777F");
+            series1.fill = am4core.color("#EE777F");
+            series1.sequencedInterpolation = true;
+            series1.sequencedInterpolationDelay = 90;
         }
     }
 }

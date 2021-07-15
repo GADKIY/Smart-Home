@@ -101,7 +101,7 @@ export default {
        }
    },
    methods: {
-       viewDevice(curDevice) {
+      viewDevice(curDevice) {
           this.deviceInfo = this.info.devices.find(el=>el.name===curDevice);
       },
       stateOnCheck(state) {
