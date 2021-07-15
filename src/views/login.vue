@@ -13,60 +13,6 @@
 <style lang="scss" scoped>
 @import "../assets/fonts/lack.css";
 @import "../assets/css/mainScreen";
-
-.security{
-    margin-top: 74px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &_form-wrap{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 400px;
-        width: 90%;
-    }
-    &_form{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    &_input{
-        width: 90%;
-        height: 70px;
-        border-radius: 20px;
-        margin-bottom: 40px;
-        outline: none;
-        font-family: 'Lack', sans-serif;
-        font-size: rem(16px);
-        padding-left: 25px;
-        border: none;
-        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
-        transition: .2s;
-        &:focus{
-            box-shadow: 0px 4px 35px rgba(101, 189, 192, 0.7);
-        }
-    }
-    &_btn{
-        width: 90px;
-        height: 35px;
-        border-radius: 35px;
-        background-color: $button-color-red;
-        cursor: pointer;
-        transition: .2s;
-        border: none;
-        outline: none;
-        font-family: 'Lack', sans-serif;
-        color: $font-color-white;
-        &:hover, &:focus{
-            background-color: $button-color-green;
-        }
-    }
-}
-
 </style>
 
 <script>

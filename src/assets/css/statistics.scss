@@ -210,6 +210,56 @@
     }
 }
 
+.graph{
+    width: 100%;
+    height: 100%;
+    font-size: rem(11px);
+    color: $font-color-grey;
+}
+
+.graphCircle{
+    width: 100%;
+    height: calc(100% - 0.6875rem);
+}
+
+.graph {
+    svg {
+        g {
+            g:nth-child(2) {
+                g:nth-child(2){
+                    g {
+                        g:nth-child(3){
+                            g:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.graphCircle {
+    svg {
+        g {
+            g:nth-child(2) {
+                g:nth-child(2){
+                    g {
+                        g:nth-child(3){
+                            g[opacity]{
+                                display: none;
+                            }
+                            g[shape-rendering]{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: rem(1240px)) {
     .statistics {
         &_list {

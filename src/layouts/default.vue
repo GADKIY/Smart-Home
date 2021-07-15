@@ -41,14 +41,6 @@
 <style lang="scss">
 @import "../assets/fonts/lack.css";
 @import "../assets/css/mainScreen";
-
-.logout{
-    border: none;
-    background-color: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 </style>
 
 <script>

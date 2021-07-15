@@ -83,8 +83,8 @@
 
 <style lang="scss" scoped>
 @import '../assets/css/modal';
-
 </style>
+
 <script>
 import modal from '@/components/modal';
 
@@ -93,7 +93,6 @@ export default {
    props: ['info'],
    components:{
       modal
-
    },
    data(){
        return{

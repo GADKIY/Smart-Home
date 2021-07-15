@@ -99,29 +99,6 @@
 
 <style lang="scss">
 @import '../assets/css/utilityBilling';
-
-.graph{
-    width: 100%;
-    height: 100%;
-}
-
-.graph {
-    svg {
-        g {
-            g:nth-child(2) {
-                g:nth-child(2){
-                    g {
-                        g:nth-child(3){
-                            g:nth-child(2) {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 </style>
 
 <script>

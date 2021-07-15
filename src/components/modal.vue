@@ -7,7 +7,6 @@
             <slot name="header">
               default header
             </slot>
-            <!-- <button class="modal-default-button btn btn-danger btn-rounded" @click="$emit('close')">&times;</button> -->
           </div>
 
           <div class="modal-body">
