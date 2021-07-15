@@ -1,0 +1,90 @@
+[
+    {
+        "name": "AC",
+        "icon": {
+            "name":"buttonAc",
+            "width": "45",
+            "height": "41"
+        }
+    },
+    {
+        "name": "TV",
+        "icon": {
+            "name":"buttonTV",
+            "width": "35",
+            "height": "31"
+        }
+    },
+    {
+        "name": "Fridge",
+        "icon": {
+            "name":"buttonFridge",
+            "width": "31",
+            "height": "36"
+        }
+    },
+    {
+        "name": "Kettle",
+        "icon": {
+            "name":"buttonKettle",
+            "width": "33",
+            "height": "34"
+        }
+    },
+    {
+        "name": "Stove",
+        "icon": {
+            "name":"buttonStove",
+            "width": "34",
+            "height": "35"
+        }
+    },
+    {
+        "name": "Dishwasher",
+        "icon": {
+            "name":"buttonDishwasher",
+            "width": "32",
+            "height": "40"
+        }
+    },
+    {
+        "name": "Multicooker",
+        "icon": {
+            "name":"buttonMulticooker",
+            "width": "40",
+            "height": "40"
+        }
+    },
+    {
+        "name": "Microwave",
+        "icon": {
+            "name":"buttonMicrowave",
+            "width": "40",
+            "height": "30"
+        }
+    },
+    {
+        "name": "Grill",
+        "icon": {
+            "name":"buttonGrill",
+            "width": "32",
+            "height": "44"
+        }
+    },
+    {
+        "name": "Washbasin",
+        "icon": {
+            "name":"buttonWashbasin",
+            "width": "36",
+            "height": "45"
+        }
+    },
+    {
+        "name": "Bath",
+        "icon": {
+            "name":"buttonBath",
+            "width": "42",
+            "height": "45"
+        }
+    }
+]

@@ -1,0 +1,333 @@
+[
+    {
+        "name": "Bedroom",
+        "icon":"bedroom",
+        "width": 47,
+        "height": 37,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+26.4",
+            "f": 79.5,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":30,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":28,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "AC",
+                "icon": {
+                    "name":"buttonAc",
+                    "width": "45",
+                    "height": "41"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "35",
+                    "height": "31"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Kitchen",
+        "icon":"kitchen",
+        "width": 48,
+        "height": 41,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+23.5",
+            "f": 74.3,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":40,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":86,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "Fridge",
+                "icon": {
+                    "name":"buttonFridge",
+                    "width": "31",
+                    "height": "36"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            },
+            {
+                "name": "Kettle",
+                "icon": {
+                    "name":"buttonKettle",
+                    "width": "33",
+                    "height": "34"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "Stove",
+                "icon": {
+                    "name":"buttonStove",
+                    "width": "34",
+                    "height": "35"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "Dishwasher",
+                "icon": {
+                    "name":"buttonDishwasher",
+                    "width": "32",
+                    "height": "40"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "Multicooker",
+                "icon": {
+                    "name":"buttonMulticooker",
+                    "width": "40",
+                    "height": "40"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "35",
+                    "height": "31"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            },
+            {
+                "name": "Microwave",
+                "icon": {
+                    "name":"buttonMicrowave",
+                    "width": "40",
+                    "height": "30"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            },
+            {
+                "name": "Grill",
+                "icon": {
+                    "name":"buttonGrill",
+                    "width": "32",
+                    "height": "44"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Living Room",
+        "icon":"livingRoom",
+        "width": 48,
+        "height": 26,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+25.2",
+            "f": 77.4,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":35,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":76,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "AC",
+                "icon": {
+                    "name":"buttonAc",
+                    "width": "45",
+                    "height": "41"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "35",
+                    "height": "31"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Bathroom",
+        "icon":"bathroom",
+        "width": 33,
+        "height": 37,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+27",
+            "f": 80.6,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":70,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":55,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "Washbasin",
+                "icon": {
+                    "name":"buttonWashbasin",
+                    "width": "36",
+                    "height": "45"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "Bath",
+                "icon": {
+                    "name":"buttonBath",
+                    "width": "42",
+                    "height": "45"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Bedroom 2",
+        "icon":"bedroom",
+        "width": 47,
+        "height": 37,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+25",
+            "f": 77,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":40,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":86,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "AC",
+                "icon": {
+                    "name":"buttonAc",
+                    "width": "45",
+                    "height": "41"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "35",
+                    "height": "31"
+                },
+                "controls": {
+                    "state":"on"
+                }
+            }
+        ]
+    }
+]
