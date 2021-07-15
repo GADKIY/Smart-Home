@@ -150,7 +150,10 @@
         align-items: center;
         color: $font-color-white;
         &-device-wrap {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             &:nth-child(6n+1) div:first-child{
                 background-color: $button-color-blue;
             }
