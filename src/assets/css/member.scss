@@ -22,11 +22,12 @@
 
     &_parameter {
         grid-column: span 3;
-        height: 101%;
+        height: 100%;
         width: 100%;
         box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
         border-radius: rem(30px);
         padding-top: rem(14px);
+        padding-bottom: rem(2px);
 
         &.time {
             height: 100%;
@@ -390,9 +391,6 @@
 
 @media screen and (max-width: rem(1050px)) {
     .member {
-        &_parameter {
-            height: 100%;
-        }
         &_main-parameters {
             grid-template-columns: repeat(5, 1fr);
         }
