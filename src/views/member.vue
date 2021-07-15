@@ -179,7 +179,7 @@ export default{
         },
         weather(){
             axios
-                .get('http://api.openweathermap.org/data/2.5/weather?lat=50.45244145440475&lon=30.525787409741707&units=metric&appid=49c39dbc9b3b6308b6d9424f48b250a5')
+                .get('https://api.openweathermap.org/data/2.5/weather?lat=50.45244145440475&lon=30.525787409741707&units=metric&appid=49c39dbc9b3b6308b6d9424f48b250a5')
                 .then((resp)=>{
                     this.curWeather = resp.data;
                     this.tempr = Math.round(this.curWeather.main.temp);

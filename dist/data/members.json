@@ -1,0 +1,52 @@
+[
+    {
+        "name":"Annie Gulberg",
+        "position":"Owner",
+        "status":"At home",
+        "location":"Bedroom",
+        "avatar":"avatar",
+        "id":"1",
+        "username":"annie",
+        "password":"1234"
+    },
+    {
+        "name":"John Gulberg",
+        "position":"Owner 2",
+        "status":"At home",
+        "location":"Bedroom",
+        "avatar":"avatar",
+        "id":"2",
+        "username":"john",
+        "password":"0987"
+    },
+    {
+        "name":"Marie Gulberg",
+        "position":"Owner 3",
+        "status":"Out",
+        "location":"",
+        "avatar":"avatar",
+        "id":"3",
+        "username":"marie",
+        "password":"qwer"
+    },
+    {
+        "name":"Anton Samoilenko",
+        "position":"Creator",
+        "status":"At home",
+        "location":"Bedroom 2",
+        "avatar":"avatar",
+        "id":"4",
+        "username":"anton",
+        "password":"zxcv"
+    },
+    {
+        "name":"Maksym Butnik-Siverskyi",
+        "position":"Creator 2",
+        "status":"At home",
+        "location":"Bedroom 2",
+        "avatar":"avatar",
+        "id":"5",
+        "username":"maksym",
+        "password":"asdf"
+    }
+]
