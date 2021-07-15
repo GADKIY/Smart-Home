@@ -38,4 +38,10 @@ export default {
 <style lang="scss">
 @import "../assets/fonts/lack.css";
 @import "../assets/css/mainScreen";
+
+.main_screen {
+    &-control_bar {
+    box-shadow: none;
+    }
+}
 </style>
