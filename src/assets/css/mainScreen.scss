@@ -23,12 +23,14 @@
         -ms-flex-pack: center;
             justify-content: center;
     background-color: #65BDC0;
+    border-radius: rem(60px);
     &-control_bar{
         position: relative;
         background-color: #65BDC0;
         width: 90%;
         max-width: rem(107px);
         text-align: center;
+        border-radius: rem(60px) 0 0 rem(60px);
         padding: rem(36px) 0 rem(36px) 0;
     }
     &-logo{
@@ -79,7 +81,7 @@
         width: 100%;
         max-width: rem(1166px);
         background-color: $main-bgc;
-        border-radius: rem(60px) 0 0 rem(60px);
+        border-radius: rem(60px);
         padding: rem(36px) rem(87px) rem(31px) rem(65px);
     }
     &-info_inner {
