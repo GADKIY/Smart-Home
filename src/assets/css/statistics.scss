@@ -9,8 +9,12 @@
 
     &_list {
         display: grid;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 1fr;
         gap: rem(30px);
@@ -41,7 +45,8 @@
         //это само поле графика
         height: calc(100% - 2.9375rem);
         width: 100%;
-        box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+        -webkit-box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+                box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
         border-radius: rem(30px);
         background-color: $font-color-white;
     }
@@ -62,7 +67,9 @@
         &-item {
             margin-bottom: rem(11px);
             margin-left: 50%;
-            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                    transform: translateX(-50%);
 
             &:last-child {
                 margin-bottom: 0;
@@ -111,8 +118,8 @@
             left: 0;
             border-radius: rem(30px) rem(30px) 0 0;
             background: rgb(255,245,245);
-            background: -moz-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,245,245,1)), color-stop(60%, rgba(255,245,245,1)), to(rgba(255,245,245,0)));
+            background: -o-linear-gradient(top, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
             background: linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -126,8 +133,8 @@
             left: 0;
             border-radius: 0 0 rem(30px) rem(30px);
             background: rgb(255,245,245);
-            background: -moz-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,245,245,0)), color-stop(40%, rgba(255,245,245,1)), to(rgba(255,245,245,1)));
+            background: -o-linear-gradient(top, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
             background: linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -145,15 +152,30 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         row-gap: rem(17px);
-        column-gap: rem(9px);
-        justify-content: center;
-        align-items: center;
+        -webkit-column-gap: rem(9px);
+           -moz-column-gap: rem(9px);
+                column-gap: rem(9px);
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         color: $font-color-white;
         &-device-wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             &:nth-child(6n+1) div:first-child{
                 background-color: $button-color-blue;
             }
@@ -179,9 +201,15 @@
         }
 
         &-btn {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: rem(71px);
             height: rem(71px);
             border-radius: rem(18px);

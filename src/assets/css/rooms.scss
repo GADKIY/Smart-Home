@@ -2,8 +2,12 @@
 
 .rooms {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     .room {
         width: 75.73%;
@@ -15,17 +19,27 @@
     }
 
     &_status-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         margin-bottom: rem(35px);
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 
         &-item {
-            box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+            -webkit-box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+                    box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
             border-radius: rem(30px);
             padding: rem(13px) rem(20px) rem(15px) rem(13px);
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             width: 28.81%;
 
             &.biger {
@@ -86,6 +100,8 @@
             left: 0;
             bottom: 0;
             border-radius: 0 0 rem(25px) rem(25px);
+            -webkit-transition: all .2s ease;
+            -o-transition: all .2s ease;
             transition: all .2s ease;
             &.temperature {
                 background-color: $button-color-red;
@@ -104,7 +120,9 @@
             position: absolute;
             bottom: 10%;
             left: 50%;
-            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                    transform: translateX(-50%);
         }
     }
 
@@ -119,8 +137,8 @@
             top: rem(27px);
             left: rem(-3px);
             background: rgb(255,255,255);
-            background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), color-stop(60%, rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+            background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
             background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -133,8 +151,8 @@
             bottom: 0;
             left: rem(-3px);
             background: rgb(255,255,255);
-            background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(40%, rgba(255,255,255,1)), to(rgba(255,255,255,1)));
+            background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
             background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -154,7 +172,9 @@
             padding: rem(20px) 0 rem(30px);
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            column-gap: rem(36px);
+            -webkit-column-gap: rem(36px);
+               -moz-column-gap: rem(36px);
+                    column-gap: rem(36px);
             row-gap: rem(27px);
             &-item {
                 width: 100%;
@@ -162,10 +182,21 @@
                 border-radius: rem(20px);
                 color: $font-color-white;
                 cursor: pointer;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-transition: all .2s;
+                -o-transition: all .2s;
                 transition: all .2s;
 
                 svg {
@@ -212,8 +243,8 @@
             top: rem(0px);
             left: rem(-3px);
             background: rgb(255,255,255);
-            background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), color-stop(60%, rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+            background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
             background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -226,8 +257,8 @@
             bottom: 0;
             left: rem(-3px);
             background: rgb(255,255,255);
-            background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(40%, rgba(255,255,255,1)), to(rgba(255,255,255,1)));
+            background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
             background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
         }
@@ -245,8 +276,12 @@
             height: 100%;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             gap: rem(29px);
             &-item {
                 &:nth-child(3)svg{
@@ -258,8 +293,11 @@
                     height: rem(153px);
                     text-align: center;
                     background: #FFFFFF;
-                    box-shadow: 0 rem(4px) rem(15px) rgba(0, 0, 0, 0.18);
+                    -webkit-box-shadow: 0 rem(4px) rem(15px) rgba(0, 0, 0, 0.18);
+                            box-shadow: 0 rem(4px) rem(15px) rgba(0, 0, 0, 0.18);
                     border-radius: rem(30px);
+                    -webkit-transition: all .2s;
+                    -o-transition: all .2s;
                     transition: all .2s;
                     color: #c1c1c1;
                     border: none;
@@ -273,7 +311,8 @@
                     &:hover,
                     &:active,
                     &:focus {
-                        box-shadow: 0 rem(4px) rem(15px) rgba(238, 119, 127, 0.31);
+                        -webkit-box-shadow: 0 rem(4px) rem(15px) rgba(238, 119, 127, 0.31);
+                                box-shadow: 0 rem(4px) rem(15px) rgba(238, 119, 127, 0.31);
                             color: rgba(238, 119, 127, 0.31);
                     }
                 }
@@ -283,6 +322,8 @@
 }
 
 .fade-enter-active, .fade-leave-active {
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
     transition: opacity .5s;
 }
 .fade-enter, .fade-leave-to {
@@ -290,9 +331,15 @@
 }
 
 .modal-btn_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .modal-btn_wrapper {
@@ -335,9 +382,15 @@
 
     label {
         cursor: pointer;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: rem(50px);
         height: rem(50px);
         background-color: #A9A9A9;
@@ -382,7 +435,10 @@
 
 @media screen and (max-width: 1023px) {
     .rooms {
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
         .room {
             width: 100%;
         }
@@ -458,9 +514,14 @@
             }
         }
         &_status-list {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             &-item {
-                justify-content: space-evenly;
+                -webkit-box-pack: space-evenly;
+                    -ms-flex-pack: space-evenly;
+                        justify-content: space-evenly;
                 max-width: rem(450px);
                 width: 100%;
                 margin: 0 auto rem(20px);

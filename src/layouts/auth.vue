@@ -38,10 +38,4 @@ export default {
 <style lang="scss">
 @import "../assets/fonts/lack.css";
 @import "../assets/css/mainScreen";
-
-@media screen and (max-width: 767px) {
-    .main_screen-info_wrap {
-        height: 100vh;
-    }
-}
 </style>

@@ -15,9 +15,14 @@
     }
 
     &-invoice_list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         .history {
             width: 67.75%;
             max-width: rem(687px);
@@ -26,10 +31,19 @@
         .current {
             width: 28.10%;
             .utility_billing-invoice_screen {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                align-items: space-between;
-                justify-content: space-between;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: space-between;
+                    -ms-flex-align: space-between;
+                        align-items: space-between;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
             }
         }
 
@@ -48,7 +62,8 @@
 
     &-invoice_screen {
         background: #FFF5F5;
-        box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+        -webkit-box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
+                box-shadow: 0 rem(4px) rem(35px) rgba(0, 0, 0, 0.14);
         border-radius: rem(30px);
         width: 100%;
 
@@ -73,8 +88,12 @@
 
         &-inner {
             padding: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             margin-bottom: rem(19px);
 
             span {
@@ -110,6 +129,8 @@
             color: $font-color-white;
             font-size: rem(18px);
             cursor: pointer;
+            -webkit-transition: all .2s;
+            -o-transition: all .2s;
             transition: all .2s;
             outline: none;
 
@@ -124,19 +145,35 @@
     }
 
     .title_wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .markers_list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         width: 100%;
         &-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin-right: rem(10px);
         }
 
@@ -187,8 +224,8 @@ table {
         top: rem(30px);
         left: 0;
         background: rgb(255,245,245);
-        background: -moz-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
-        background: -webkit-linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,245,245,1)), color-stop(60%, rgba(255,245,245,1)), to(rgba(255,245,245,0)));
+        background: -o-linear-gradient(top, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
         background: linear-gradient(180deg, rgba(255,245,245,1) 0%, rgba(255,245,245,1) 60%, rgba(255,245,245,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
     }
@@ -202,8 +239,8 @@ table {
         left: 0;
         border-radius: 0 0 rem(30px) rem(30px);
         background: rgb(255,245,245);
-        background: -moz-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
-        background: -webkit-linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,245,245,0)), color-stop(40%, rgba(255,245,245,1)), to(rgba(255,245,245,1)));
+        background: -o-linear-gradient(top, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
         background: linear-gradient(180deg, rgba(255,245,245,0) 0%, rgba(255,245,245,1) 40%, rgba(255,245,245,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff5f5",endColorstr="#fff5f5",GradientType=1);
     }
@@ -235,8 +272,12 @@ table {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     td {
         font-size: rem(13px);
@@ -250,6 +291,8 @@ table {
                 border-radius: rem(16px);
                 display: inline-block;
                 line-height: rem(24px);
+                -webkit-transition: all .2s ease;
+                -o-transition: all .2s ease;
                 transition: all .2s ease;
                 &.Unpaid {
                     cursor: pointer;
@@ -301,7 +344,10 @@ table {
                 max-width: rem(500px);
                     width: 100%;
                     .utility_billing-invoice_screen {
-                        flex-direction: row;
+                        -webkit-box-orient: horizontal;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: row;
+                                flex-direction: row;
                     }
             }
         }
@@ -322,8 +368,12 @@ table {
             }
 
             &-inner {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: space-between;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
                 margin-bottom: rem(19px);
                 &:last-child {
                     margin-bottom: 0;
@@ -396,10 +446,17 @@ table {
             padding-bottom: rem(5px);
         }
         tr {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
         }
     }
 }
@@ -409,7 +466,10 @@ table {
         &-invoice_list {
             .current {
                     .utility_billing-invoice_screen {
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                     }
             }
         }
@@ -440,7 +500,8 @@ table {
             }
         }
         .title_wrap {
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
         }
         .markers_list {
             margin-bottom: rem(10px);
