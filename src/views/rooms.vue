@@ -2,14 +2,16 @@
     <div class="rooms">
         <room :info="roomInfo"></room>
         <div class="rooms_selectors">
-            <ul class="rooms_selectors_list">
-                <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r.name">
-                    <button type="button" @click="viewRoom(r.name)">
-                        <v-svg :width="r.width" :height="r.height" :viewBox="'0 0 ' + r.width + ' ' + r.height" :sprite="r.icon"></v-svg>
-                        <div>{{r.name}}</div>
-                    </button>
-                </li>
-            </ul>
+            <div class="rooms_selectors_wrap">
+                <ul class="rooms_selectors_list">
+                    <li class="rooms_selectors_list-item" v-for="r in rooms" :key="r.name">
+                        <button type="button" @click="viewRoom(r.name)">
+                            <v-svg :width="r.width" :height="r.height" :viewBox="'0 0 ' + r.width + ' ' + r.height" :sprite="r.icon"></v-svg>
+                            <div>{{r.name}}</div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
 </div>
 </template>

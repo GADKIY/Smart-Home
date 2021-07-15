@@ -276,5 +276,58 @@
                 }
             }
         ]
+    },
+    {
+        "name": "Bedroom 2",
+        "icon":"bedroom",
+        "width": 47,
+        "height": 37,
+        "temperature": {
+            "name": "Room's Temperature",
+            "icon": "temperature",
+            "c": "+26.4",
+            "f": 79.5,
+            "width": 22,
+            "height": 40
+        },
+
+        "humidity": {
+            "name": "Room's Humidity",
+            "icon": "humidity",
+            "indicator":30,
+            "width": 27,
+            "height": 36
+        },
+        "lightning": {
+            "name": "Room's Lightning",
+            "icon": "lightning",
+            "indicator":28,
+            "width": 33,
+            "height": 33
+        },
+        "devices":[
+            {
+                "name": "AC",
+                "icon": {
+                    "name":"buttonAc",
+                    "width": "45",
+                    "height": "41"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            },
+            {
+                "name": "TV",
+                "icon": {
+                    "name":"buttonTV",
+                    "width": "35",
+                    "height": "31"
+                },
+                "controls": {
+                    "state":"off"
+                }
+            }
+        ]
     }
 ]
