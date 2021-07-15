@@ -3,7 +3,7 @@
     "background_color": "#ddd7d1",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/Smart-Home-deploy/",
     "url":"/Smart-Home-deploy/",
     "name": "HSmart",
     "short_name": "Smart",
