@@ -151,47 +151,23 @@
         color: $font-color-white;
         &-device-wrap {
             text-align: center;
-            &:nth-child(6n+1) button{
+            &:nth-child(6n+1) div:first-child{
                 background-color: $button-color-blue;
-
-                &:hover {
-                    background-color: lighten($color: $button-color-blue, $amount: 10);
-                }
             }
-            &:nth-child(6n+2) button {
+            &:nth-child(6n+2) div:first-child{
                 background-color: $button-color-red;
-
-                &:hover {
-                    background-color: darken($color: $button-color-red, $amount: 10);
-                }
             }
-            &:nth-child(6n+3) button{
+            &:nth-child(6n+3) div:first-child{
                 background-color: $button-color-green;
-
-                &:hover {
-                    background-color: darken($color: $button-color-green, $amount: 10);
-                }
             }
-            &:nth-child(6n+4) button {
+            &:nth-child(6n+4) div:first-child{
                 background-color: $button-color-red;
-
-                &:hover {
-                    background-color: darken($color: $button-color-red, $amount: 10);
-                }
             }
-            &:nth-child(6n+5) button{
+            &:nth-child(6n+5) div:first-child{
                 background-color: $button-color-green;
-
-                &:hover {
-                    background-color: darken($color: $button-color-green, $amount: 10);
-                }
             }
-            &:nth-child(6n+6) button{
+            &:nth-child(6n+6) div:first-child{
                 background-color: $button-color-blue;
-
-                &:hover {
-                    background-color: lighten($color: $button-color-blue, $amount: 10);
-                }
             }
             div {
                 font-size: rem(12px);
@@ -200,6 +176,9 @@
         }
 
         &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: rem(71px);
             height: rem(71px);
             border-radius: rem(18px);
