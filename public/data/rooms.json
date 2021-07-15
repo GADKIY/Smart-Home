@@ -285,8 +285,8 @@
         "temperature": {
             "name": "Room's Temperature",
             "icon": "temperature",
-            "c": "+26.4",
-            "f": 79.5,
+            "c": "+25",
+            "f": 77,
             "width": 22,
             "height": 40
         },
@@ -294,14 +294,14 @@
         "humidity": {
             "name": "Room's Humidity",
             "icon": "humidity",
-            "indicator":30,
+            "indicator":40,
             "width": 27,
             "height": 36
         },
         "lightning": {
             "name": "Room's Lightning",
             "icon": "lightning",
-            "indicator":28,
+            "indicator":86,
             "width": 33,
             "height": 33
         },
@@ -314,7 +314,7 @@
                     "height": "41"
                 },
                 "controls": {
-                    "state":"off"
+                    "state":"on"
                 }
             },
             {
@@ -325,7 +325,7 @@
                     "height": "31"
                 },
                 "controls": {
-                    "state":"off"
+                    "state":"on"
                 }
             }
         ]

@@ -28,5 +28,25 @@
         "id":"3",
         "username":"marie",
         "password":"qwer"
+    },
+    {
+        "name":"Anton Samoilenko",
+        "position":"Creator",
+        "status":"At home",
+        "location":"Bedroom 2",
+        "avatar":"avatar",
+        "id":"4",
+        "username":"anton",
+        "password":"zxcv"
+    },
+    {
+        "name":"Maksym Butnik-Siverskyi",
+        "position":"Creator 2",
+        "status":"At home",
+        "location":"Bedroom 2",
+        "avatar":"avatar",
+        "id":"5",
+        "username":"maksym",
+        "password":"asdf"
     }
 ]
